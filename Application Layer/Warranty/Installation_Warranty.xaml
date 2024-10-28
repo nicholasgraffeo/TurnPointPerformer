@@ -1,0 +1,337 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DetailsUpdate_Warranty" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_PhoneNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_FullAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_Email" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,4944</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DetailsUpdate_Warranty_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Fills out all of the required information on the Installation page of WarrantyYourWay." DisplayName="Installation_Warranty" sap:VirtualizedContainerService.HintSize="616,4879" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting Installation_Warranty&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="554,4423" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,4216" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Lennox Residential Product Warranty Registration | Lennox Warranty Your Way" sap:VirtualizedContainerService.HintSize="450,4128" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Version="V2" WindowResize="Restore">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,3888" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_FirstName + &quot;[k(Tab)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="76dd35d4-d8e3-4fbd-8e59-4dc4a2e31182" CvElementArea="508, 335, 239, 42" CvType="InputBox" DesignTimeRectangle="510, 337, 235, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='firstName' tag='INPUT' aaname='First Name ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' aaname='First Name ' type='text' class='form-control wyw-field' /&gt;" Guid="9d7326e6-841a-4193-a76e-b750b4f7e3e8" InformativeScreenshot="6d3d065539ab13673c5a1bd80cb96240.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="76dd35d4-d8e3-4fbd-8e59-4dc4a2e31182" CvTextArea="509, 317, 85, 15" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="510, 313, 84, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-weight-bold mb-0' aaname='First Name ' check:innerText='First Name' /&gt;" Guid="a11eb152-a7f9-4599-96fe-ba8c0329107a" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <ui:LogMessage DisplayName="Log Message first name" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Entered firat name : &quot;+in_FirstName]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,286" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_LastName + &quot;[k(Tab)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="30ae3b2e-63c5-4df4-ba6a-251274646f21" CvElementArea="816, 315, 254, 32" CvType="InputBox" DesignTimeRectangle="818, 316, 251, 29" DesignTimeScaleFactor="0.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='lastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='form-control wyw-field OneLinkNoTx' aaname='Last Name ' /&gt;" Guid="e82cb0dd-5a8b-42f3-a803-8a91b87ac988" InformativeScreenshot="1219f5ce9fc03e6ed332b2084d6606b0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="30ae3b2e-63c5-4df4-ba6a-251274646f21" CvTextArea="818, 300, 63, 12" CvTextArgument="Last Name" CvType="Text" DesignTimeRectangle="818, 298, 62, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Last Name ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Last Name ' tag='LABEL' type='' class='font-weight-bold mb-0' check:innerText='Last Name' /&gt;" Guid="bc08410b-3036-47e4-a20d-70406b529bb6" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <ui:LogMessage DisplayName="Log Message last name" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Entered last name : &quot;+in_LastName]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Address" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_FullAddress]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="4ee613c1-ca1b-4b13-8722-3402618b14a8" CvElementArea="634, 352, 435, 32" CvType="InputBox" DesignTimeRectangle="634, 354, 435, 28" DesignTimeScaleFactor="0.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='autocomplete' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='autocomplete' tag='INPUT' type='text' class='form-control OneLinkNoTx pac-target-input' aaname='Please Enter Your Full Physical/Shipping Address' /&gt;" Guid="3375092d-4288-4209-9951-2175b60ecb29" InformativeScreenshot="35ffe239572dd6c7d8071e76100d1d09.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="4ee613c1-ca1b-4b13-8722-3402618b14a8" CvTextArea="633, 338, 282, 12" CvTextArgument="Please Enter Your Full Physical/Shipping Address" CvType="Text" DesignTimeRectangle="634, 336, 280, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='wyw-form' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='wyw-form' tag='LABEL' type='' class='font-weight-bold mb-0' aaname='Please Enter Your Full Physical/Shipping Address' check:innerText='Please Enter Your Full Physical/Shipping Address' /&gt;" Guid="63c1945a-e737-4596-b6fa-4fb72e490abc" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(down)][u(hk)]" Version="V3">
+                      <uix:NKeyboardShortcuts.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NKeyboardShortcuts.VerifyOptions>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3">
+                      <uix:NKeyboardShortcuts.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NKeyboardShortcuts.VerifyOptions>
+                    </uix:NKeyboardShortcuts>
+                    <ui:LogMessage DisplayName="Log Message address" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;entered address : &quot;+in_FullAddress]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_PhoneNumber + &quot;[k(Tab)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="886a62f9-bb12-43f5-b3a9-97fab3603ad8" CvElementArea="508, 378, 289, 42" CvType="InputBox" DesignTimeRectangle="510, 380, 285, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='phone' tag='INPUT' aaname='Phone' name='phone' /&gt;" FuzzySelectorArgument="&lt;webctrl id='phone' tag='INPUT' aaname='Phone' name='phone' type='tel' class='form-control wyw-field' /&gt;" Guid="ceacc303-545f-490a-b5da-06411714f629" InformativeScreenshot="41170aae6d4e29f022ceca133b0cfa28.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="886a62f9-bb12-43f5-b3a9-97fab3603ad8" CvTextArea="509, 360, 50, 15" CvTextArgument="Phone" CvType="Text" DesignTimeRectangle="510, 356, 49, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Phone' parentid='wyw-form' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Phone' parentid='wyw-form' tag='LABEL' type='' class='font-weight-bold mb-0' check:innerText='Phone' /&gt;" Guid="9d3be4a8-7517-42bc-87af-93b3e5c36e8d" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <ui:LogMessage DisplayName="Log Message phone number" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Entered phone number : &quot;+in_PhoneNumber]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Dealer Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_Email]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="0649ebd6-2c98-4c0d-9c1a-eedbed716919" CvElementArea="508, 480, 289, 41" CvType="InputBox" DesignTimeRectangle="510, 481, 285, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='email_dealer' aaname='Dealer Email ' name='email_dealer' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email_dealer' aaname='Dealer Email ' name='email_dealer' tag='INPUT' type='email' class='form-control wyw-field' /&gt;" Guid="661497be-8379-4835-9fed-94d39ea2c16c" InformativeScreenshot="05e89701636b681c95ab5892f7dccb84.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="0649ebd6-2c98-4c0d-9c1a-eedbed716919" CvTextArea="509, 460, 98, 16" CvTextArgument="Dealer Email" CvType="Text" DesignTimeRectangle="510, 457, 97, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='dealer-email' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dealer-email' tag='LABEL' type='' class='font-weight-bold mb-0' aaname='Dealer Email ' check:innerText='Dealer Email' /&gt;" Guid="43c33ce4-dc33-4468-a639-9c1ca07f66d5" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <ui:LogMessage DisplayName="Log Message dealer email" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Entered dealer email : &quot;+in_Email]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Owner Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Text="[in_Email]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="4637baf6-7c22-4eaa-b7a5-4af4c63c6dc2" CvElementArea="802, 532, 290, 41" CvType="InputBox" DesignTimeRectangle="805, 534, 285, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='email_owner' tag='INPUT' aaname='Owner Email' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email_owner' tag='INPUT' aaname='Owner Email' type='email' class='form-control wyw-field' /&gt;" Guid="d2f3438c-f161-4a77-904d-87f70dc93af9" InformativeScreenshot="522ef2ae1d310865e419b455037af677.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="4637baf6-7c22-4eaa-b7a5-4af4c63c6dc2" CvTextArea="804, 513, 99, 16" CvTextArgument="Owner Email" CvType="Text" DesignTimeRectangle="805, 510, 98, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Owner Email' parentid='wyw-form' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Owner Email' parentid='wyw-form' tag='LABEL' type='' class='font-weight-bold mb-0' check:innerText='Owner Email' /&gt;" Guid="24cdf795-e6b6-4a2f-89f8-27873dd48edf" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I acknowledge'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="2edb0dc5-5bb1-46a1-ab58-3bcb9464e5ed" CvElementArea="632, 623, 19, 18" CvType="CheckBox" DesignTimeRectangle="634, 624, 12, 15" DesignTimeScaleFactor="0.75" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl id='agree' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='agree' tag='INPUT' type='checkbox' class='custom-control-input' aaname='I have reviewed the Eligibility Requirements and agree to and accept them.' /&gt;" Guid="4e270472-507e-44d4-95c0-ef37919d0805" InformativeScreenshot="ac9f9b71162de30e861167525e466abd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="2edb0dc5-5bb1-46a1-ab58-3bcb9464e5ed" CvTextArea="657, 625, 371, 11" CvTextArgument="I have reviewed the Eligibility Requirements and agree to and accept them." CvType="Text" DesignTimeRectangle="658, 624, 370, 16" ElementType="Text" FullSelectorArgument="&lt;webctrl class='custom-control-label' parentid='wyw-form' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl class='custom-control-label' parentid='wyw-form' tag='LABEL' type='' aaname='I have reviewed the  and agree to and accept them.' check:innerText='I have reviewed the Eligibility Requirements and agree to and accept them.' /&gt;" Guid="16d40d83-0c8c-4039-b1c1-a50cb0b305f4" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="95bffadc-bf80-4494-b092-ef38e6e0df37" CvElementArea="717, 652, 165, 44" CvTextArea="780, 667, 39, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="718, 654, 163, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='form-submit' tag='BUTTON' aaname='Next' innertext='Next' /&gt;" FuzzySelectorArgument="&lt;webctrl id='form-submit' tag='BUTTON' aaname='Next' innertext='Next' type='submit' class='btn btn-primary' check:text='Next' /&gt;" Guid="8b180ac0-ac50-4ba5-af0d-e45f8ec097af" InformativeScreenshot="ac73bf7b04864851244959ab41fa39a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="dd07c0c5-07b6-4aff-b6fd-a532b2afe438" CvElementArea="789, 337, 21, 21" CvType="RadioButton" DesignTimeRectangle="792, 336, 16, 20" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl id='suggestedAddress*' tag='INPUT' parentid='suggested-address-list' /&gt;" FuzzySelectorArgument="&lt;webctrl id='suggestedAddress*' tag='INPUT' parentid='suggested-address-list' type='radio' class='custom-control-input' aaname='28023 Dallas RdRichland,WA 99352-7734US' /&gt;" Guid="3115e7de-676e-46e0-9905-4ecd2ebff3f2" InformativeScreenshot="2fb78c1f42e3e3fd3065144a906f733c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="816, 336, 161, 63" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='suggested-address-list' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='suggested-address-list' tag='LABEL' type='' class='custom-control-label' aaname='28023 Dallas RdRichland,WA 99352-7734US' check:innerText='28023 Dallas Rd&amp;#xD;&amp;#xA;Richland,WA 99352-7734&amp;#xD;&amp;#xA;US' /&gt;" Guid="24a62348-b102-401d-9683-f07fc54108ad" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d61522e-d7d3-4cc5-bcd8-90cb50bdfb48" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/installation/" CVScreenId="676d79e9-f508-4c4c-9310-2a7947774580" CvElementArea="890, 537, 154, 44" CvTextArea="932, 552, 71, 14" CvTextArgument="Continue" CvType="Button" DesignTimeRectangle="892, 539, 151, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Continue' tag='BUTTON' type='button' innertext='Continue' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Continue' tag='BUTTON' type='button' innertext='Continue' class='btn btn-primary' check:text='Continue' /&gt;" Guid="c650c410-e9e1-42b7-9d52-81ae81522141" InformativeScreenshot="18e480bfb9813a0e98f75dce89ae73a6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1616, 750" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPYzjG48YKxHFAfBGIvwHxPyD+jwOD5EBqQGpBelhBBoAYb4AYmwZ8GKQnDmTAeSRBUvF5kAFf0QRJwV9BBmD3M7crBHPBsAuEBokh1P0DGYCm0PX/cX6P/yfF/f6fkgv5f0Y18v9ZzZj/Z7Vi/59Rj/5/WiH0/3Eh7/9HOYEGAvUygDSflAr4f043/v85/YT/lxxy/19xK/p/yS7n/zX/yv+XnfL/34xt/n8zpvn/7bQuILvl/+307v9XfcrAFjEc5XAGK7wZ1/L/UfOC//dKpv5/s/7Q/yd9K8H00/5V/x9Uzfp/N3/i/1dLd0NcoRj2/82Gw2DDwV64Vzzl/62ENqABC//fye77/6R7+f9n09b/f9yx9P/zWZv+3yuc/P9ewaT/T3pXAL0V/P+iZeb/V0t2/T9vlAw0gNcd4k+N6P9ntYH+VIn4f0o66P9pZSAtE/T/vEHS/8vOBUCv5YFdej245v+t+FagdxPBYQcJRHgAIoU0jOZzBwcaKFBPivv/PyHsjYglcCDiT7oIDNLAjSEOjkaKExLFSZnizERBdnZjBQCr5zChXiiH7QAAAABJRU5ErkJggg==" InformativeScreenshot="c636acb383f01348e90efb74042d4ad0.jpg" Selector="&lt;html app='chrome.exe' url='https://www.warrantyyourway.com/installation/' /&gt;" Title="Lennox Residential Product Warranty Registration | Lennox Warranty Your Way" Url="https://www.warrantyyourway.com/installation/" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,164" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Finished Installation_Warranty&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,470 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Warranty_Lennox" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_State" Type="InArgument(x:String)" />
+    <x:Property Name="in_City" Type="InArgument(x:String)" />
+    <x:Property Name="out_PlanPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="in_EquipmentRetailPrice" Type="InArgument(x:String)" />
+    <x:Property Name="in_Street" Type="InArgument(x:String)" />
+    <x:Property Name="in_PostalCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_WarrantyLength" Type="InArgument(x:String)" />
+    <x:Property Name="in_SerialNumberList" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_InstallDate" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,5430</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Warranty_Lennox_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Navigate to MyComfortShield website, click Enter Sale, and enter information until Plan Price is visible and extract it." DisplayName="Warranty_Lennox1" sap:VirtualizedContainerService.HintSize="1312,5365" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1250,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting Warranty_Lennox1&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1250,1068" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,861" sap2010:WorkflowViewState.IdRef="Sequence_52">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: HVAC Supplier | LennoxPros" sap:VirtualizedContainerService.HintSize="450,773" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="2b81c245-c1ff-425a-9abc-2ecedc90a1f6" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,533" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Warranty'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2b81c245-c1ff-425a-9abc-2ecedc90a1f6" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" CVScreenId="6982f231-06c4-491f-a707-24eb06d77e71" CvTextArea="617, 214, 62, 15" CvTextArgument="Warranty" CvType="Text" DesignTimeRectangle="607, 200, 83, 40" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Warranty' parentid='page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Warranty' parentid='page' tag='A' type='' class='' check:innerText='Warranty' /&gt;" Guid="fab1c2bb-3bf4-4008-9d76-6f1c6410d408" InformativeScreenshot="7315d01d16b85aaf6a7e18c0ceb11fd0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="6982f231-06c4-491f-a707-24eb06d77e71" CvTextArea="477, 213, 116, 16" CvTextArgument="Repair Part Finder" CvType="Text" DesignTimeRectangle="466, 200, 138, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Repair Part Finder' parentid='page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Repair Part Finder' parentid='page' tag='A' type='' class='' check:innerText='Repair Part Finder' /&gt;" Guid="a3a80e46-85ef-49bc-a2da-d9a10921fd8f" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Warranty Your'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_44" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2b81c245-c1ff-425a-9abc-2ecedc90a1f6" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://apps.lennoxpros.com/commonwarranty/Default.aspx?_gl=1*yj6wc2*_gcl_au*MTMxNDE4NDE2Ny4xNzI2MDcxMTE2" CVScreenId="6150066d-5742-45d3-bdf9-7eb924d66329" CvTextArea="1436, 573, 169, 14" CvTextArgument="Comfort Shield Labor Warranty" CvType="Text" DesignTimeRectangle="1430, 562, 271, 36" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='style3' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='7' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl class='style3' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='  &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 ' check:innerText='Comfort Shield Labor Warranty' /&gt;" Guid="9b0c2995-3dab-4d2c-a4bb-f474a8789e7e" InformativeScreenshot="42f40f60d2a6c9bca0fc656e6626ec0f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Warranty Tools | LennoxPros' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="6150066d-5742-45d3-bdf9-7eb924d66329" CvTextArea="1436, 538, 154, 14" CvTextArgument="Warranty Your Way Offering" CvType="Text" DesignTimeRectangle="1430, 526, 271, 36" FullSelectorArgument="&lt;webctrl class='style3' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl class='style3' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='                                                               ' check:innerText='Warranty Your Way Offering' /&gt;" Guid="7961f594-d9b0-44e8-92e0-beae2c656cb9" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1720, 747" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPYzjG48YKxHFAfBGIvwHxPyD+jwOD5EBqQGpBelhBBoAYb4AYmwZ8GKQnDmTAeSRBUvF5kAFf0QRJwV9BBmD3M7crBHPBsAuEBokh1P0DGYCm0PX/cX6P/yfF/f6fkgv5f0Y18v9ZzZj/Z7Vi/59Rj/5/WiH0/3Eh7/9HOYEGAvUygDSflAr4f043/v85/YT/lxxy/19xK/p/yS7n/zX/yv+XnfL/34xt/n8zpvn/7bQuILvl/+307v9XfcrAFjEc5XAGK7wZ1/L/UfOC//dKpv5/s/7Q/yd9K8H00/5V/x9Uzfp/N3/i/1dLd0NcoRj2/82Gw2DDwV64Vzzl/62ENqABC//fye77/6R7+f9n09b/f9yx9P/zWZv+3yuc/P9ewaT/T3pXAL0V/P+iZeb/V0t2/T9vlAw0gNcd4k+N6P9ntYH+VIn4f0o66P9pZSAtE/T/vEHS/8vOBUCv5YFdej245v+t+FagdxPBYQcJRHgAIoU0jOZzBwcaKFBPivv/PyHsjYglcCDiT7oIDNLAjSEOjkaKExLFSZnizERBdnZjBQCr5zChXiiH7QAAAABJRU5ErkJggg==" InformativeScreenshot="5196ed4d4b2af60ca56b766c7c2b3867.jpg" Selector="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" Title="HVAC Supplier | LennoxPros" Url="https://www.lennoxpros.com/" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1250,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1250,3719" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1208,3512" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: VendorPortal" sap:VirtualizedContainerService.HintSize="1146,3424" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1112,3184" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="10" DisplayName="Click 'Circle with'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_45" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="98ed501c-e613-4b82-8db0-adce8d694485" CvTextArea="688, 688, 99, 20" CvTextArgument="Enter Sale" CvType="Text" DesignTimeRectangle="689, 686, 98, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='' aaname='Enter Sale' check:innerText='Enter Sale' /&gt;" Guid="d3fe8ec7-0812-4b4c-8c02-701c63f6dd8c" InformativeScreenshot="701dfc84258c37a47f6cd3044ab29b9d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="98ed501c-e613-4b82-8db0-adce8d694485" CvElementArea="632, 674, 51, 50" CvTextArea="649, 686, 18, 26" CvType="Icon" DesignTimeRectangle="635, 676, 46, 46" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' parentid='root' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='root' tag='svg' class='' aaname='' check:text='Circle with Dollar Sign' /&gt;" Guid="330e76fa-cc9c-4023-bcca-1373f969072d" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Installation Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,250" sap2010:WorkflowViewState.IdRef="NTypeInto_22" InteractionMode="Simulate" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Text="[in_InstallDate]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="7bf6c7dd-9766-4abb-ab66-3d6a01a30c3b" CvElementArea="835, 437, 202, 39" CvType="InputBox" DesignTimeRectangle="838, 439, 167, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control dateInput' aaname='' /&gt;" Guid="92088016-e817-4788-bd9f-7dc2a459be45" InformativeScreenshot="80e59d0ad91c3e28f929a59d1a251e41.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="7bf6c7dd-9766-4abb-ab66-3d6a01a30c3b" CvTextArea="837, 413, 105, 13" CvTextArgument="Installation Date" CvType="Text" DesignTimeRectangle="838, 407, 104, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Installation Date' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Installation Date' class='form-label' tag='LABEL' type='' check:innerText='Installation Date' /&gt;" Guid="90560e45-8cd8-4cd4-ba21-4dda14ba49e9" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Calendar Icon'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_46" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" DesignTimeRectangle="1005, 439, 32, 35" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl name='calendarIcon' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl name='calendarIcon' tag='svg' type='' class='datePicker' aaname='' check:text='Calendar Icon' /&gt;" Guid="2a35b1a7-1c6c-4adf-beb4-085b8ff79193" InformativeScreenshot="595e3ede2e5c39836dd5885c4e2be69d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Street Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Text="[in_Street]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="7bf6c7dd-9766-4abb-ab66-3d6a01a30c3b" CvElementArea="621, 630, 356, 39" CvType="InputBox" DesignTimeRectangle="623, 632, 353, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='installationAddress' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='installationAddress' tag='INPUT' type='text' class='form-control form-control' aaname='Street Address' /&gt;" Guid="1a25fad6-1c01-4893-b7d1-307e25d1ff7e" InformativeScreenshot="e8491434658ad2357fe47e179b366d15.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="7bf6c7dd-9766-4abb-ab66-3d6a01a30c3b" CvTextArea="622, 606, 92, 13" CvTextArgument="Street Address" CvType="Text" DesignTimeRectangle="623, 600, 91, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Street Address' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Street Address' class='form-label' tag='LABEL' type='' check:innerText='Street Address' /&gt;" Guid="95ec6dbb-23e4-4829-8af7-dd308718fc9e" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zip/Postal'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Text="[in_PostalCode]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="a2fc1cb7-a09a-4d96-ae82-87171f833da6" CvElementArea="621, 782, 173, 38" CvType="InputBox" DesignTimeRectangle="623, 784, 169, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='installationPostal' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='installationPostal' tag='INPUT' type='text' class='form-control form-control' aaname='Zip/Postal' /&gt;" Guid="a540117e-3957-48b6-9ae6-3fdb6812b113" InformativeScreenshot="1a52deb8ada6a05774393d42cecf8cb7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="a2fc1cb7-a09a-4d96-ae82-87171f833da6" CvTextArea="622, 758, 66, 16" CvTextArgument="Zip/Postal" CvType="Text" DesignTimeRectangle="623, 752, 64, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Zip/Postal' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zip/Postal' class='form-label' tag='LABEL' type='' check:innerText='Zip/Postal' /&gt;" Guid="21e880d1-eaf8-4d66-89be-bf4b2a86b00c" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1050,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="1050,1293" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_SerialNumberList]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1016,1147" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Serial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,286" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Text="[currentText]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="bda118e6-b2ce-4d13-acaa-3188ce837782" CvElementArea="622, 1046, 163, 35" CvType="InputBox" DesignTimeRectangle="623, 1046, 162, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='serialNum' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='serialNum' tag='INPUT' type='text' class='form-control form-control' aaname='Serial' /&gt;" Guid="c9535128-0268-4897-b9f0-d819d8aab851" InformativeScreenshot="4d0ef001f60813f9bba5e6f4067e20d9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="bda118e6-b2ce-4d13-acaa-3188ce837782" CvTextArea="622, 1020, 38, 13" CvTextArgument="Serial" CvType="Text" DesignTimeRectangle="623, 1014, 36, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' type='' check:innerText='Serial' /&gt;" Guid="baf27e2f-ef01-4a3f-9a95-bf385b105fc3" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.VerifyOptions>
+                                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                </uix:VerifyExecutionTypeIntoOptions>
+                              </uix:NTypeInto.VerifyOptions>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Serial'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_54" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="bda118e6-b2ce-4d13-acaa-3188ce837782" CvElementArea="782, 1045, 40, 36" CvType="Button" DesignTimeRectangle="792, 1047, 22, 32" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' parentid='root' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='root' tag='svg' class='' aaname='' check:text='search' /&gt;" Guid="3856d92a-1ec3-4e78-8319-c90045dcbbda" InformativeScreenshot="1d88010cd3b4a8aa7552f5eae6731abf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="bda118e6-b2ce-4d13-acaa-3188ce837782" CvTextArea="622, 1020, 38, 13" CvTextArgument="Serial" CvType="Text" DesignTimeRectangle="623, 1014, 36, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' type='' check:innerText='Serial' /&gt;" Guid="1cea6be4-18ec-456e-a5e1-a7b60ef0ad1a" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                            </uix:NClick>
+                            <uix:NCheckState DisplayName="Check App State 'Verified'" sap:VirtualizedContainerService.HintSize="954,548" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PlusAdd'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_55" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="27ab017f-10d4-4e4b-91e7-e0cae022ebe4" CvElementArea="1612, 1307, 73, 37" CvType="Button" DesignTimeRectangle="1613, 1308, 70, 35" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-labelledby='Add Product' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='Add Product' tag='BUTTON' type='' class='btn-secondary iconBtn AddProducts_addBtn__VWUfC' aaname='PlusAdd' check:innerText='Add' /&gt;" Guid="b4192a08-734e-4f09-bc60-005b1aa24eb9" InformativeScreenshot="1ec4e302166ba9cfc533060318e732b7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="27ab017f-10d4-4e4b-91e7-e0cae022ebe4" CvElementArea="1612, 1307, 73, 37" CvTextArea="1643, 1318, 27, 13" CvTextArgument="Add" CvType="Button" DesignTimeRectangle="1645, 1315, 25, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Add' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Add' parentid='root' tag='SPAN' type='' class='' check:innerText='Add' /&gt;" Guid="01eb6ea7-472a-4c7e-b9be-d15783838973" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="b0a0592c-ad79-4bd0-944b-9c5d8414cf8e" CvTextArea="621, 1084, 50, 13" CvTextArgument="Verified" CvType="Text" DesignTimeRectangle="623, 1081, 199, 21" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='AddProducts_verifyMsg__vzOpK' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='AddProducts_verifyMsg__vzOpK' parentid='root' tag='DIV' type='' aaname='Verified' check:innerText='Verified' /&gt;" Guid="e6bc77b7-2bf0-46be-8edf-2e947d85d746" InformativeScreenshot="3eef44c166eb59f1c52deeeaa9d0e7f0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="b0a0592c-ad79-4bd0-944b-9c5d8414cf8e" CvTextArea="622, 1020, 38, 13" CvTextArgument="Serial" CvType="Text" DesignTimeRectangle="623, 1014, 36, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Serial' class='form-label' tag='LABEL' type='' check:innerText='Serial' /&gt;" Guid="3f5b6eca-96a1-4a2c-a9be-fb1ecd5d551f" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheckState.Target>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_56" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="443fcdbe-a328-423f-8502-326260226702" CvElementArea="1601, 1511, 94, 42" CvTextArea="1613, 1524, 68, 14" CvTextArgument="Continue" CvType="Button" DesignTimeRectangle="1602, 1513, 91, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Continue' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Continue' tag='BUTTON' type='button' class='btn btn-primary SpinnerButton_relative__w3PCh' check:innerText='Continue' /&gt;" Guid="e6b5417f-8b16-497c-a4e0-106c91106f8f" InformativeScreenshot="ea0f972da86632cc6ab74841a1ee5483.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="443fcdbe-a328-423f-8502-326260226702" CvTextArea="1524, 1524, 62, 13" CvTextArgument="Save Sale" CvType="Text" DesignTimeRectangle="1525, 1513, 61, 38" ElementType="Button" FullSelectorArgument="&lt;webctrl class='btnLink' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btnLink' tag='BUTTON' type='' aaname='Save Sale' check:innerText='Save Sale' /&gt;" Guid="173e5db5-dd98-4941-ad09-a7f24ffb63fe" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text 'Plan Price'" sap:VirtualizedContainerService.HintSize="1050,182" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="6e87d2cd-f152-4305-8eb3-52b2867473f3" TextString="[out_PlanPrice]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mycomfortshield.com/" CVScreenId="56a3b9a0-6a5a-4ae1-bb48-34f4c1695dfe" CvTextArea="351, 309, 83, 22" CvType="AnyWordGroup" DesignTimeRectangle="352, 311, 82, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='P' class='PlanDetails_amountNum__IbrUC PlanDetails_activePrice__Fzwwk' /&gt;" Guid="23c99420-ef75-42d9-9a0e-fb2fa2e94fdd" InformativeScreenshot="4adcc964a770b6b37d782cc15f27b44e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="56a3b9a0-6a5a-4ae1-bb48-34f4c1695dfe" CvTextArea="351, 334, 65, 13" CvTextArgument="Plan Price" CvType="Text" DesignTimeRectangle="352, 331, 82, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' idx='2' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='P' aaname='Plan Price' check:innerText='Plan Price' /&gt;" Guid="16383204-111e-4a1f-a62e-554a290b53c9" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="4eccba3c2dd465879156a2229b1a819c.jpg" Selector="&lt;html app='chrome.exe' title='VendorPortal' /&gt;" Title="VendorPortal" Url="https://www.mycomfortshield.com/" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1250,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finished Warranty_Lennox1&quot;]" />
+  </Sequence>
+</Activity>

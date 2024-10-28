@@ -1,0 +1,339 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,2992</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="608,2927" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Invoice Number&quot;).ToString]" Name="InvoiceNumber" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Item Code List&quot;).ToString]" Name="ItemCodes" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Serial Number List&quot;).ToString]" Name="SerialNumbers" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Customer Address&quot;).ToString]" Name="CustomerAddress" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Location Name&quot;).ToString]" Name="LocationName" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;First Name&quot;).ToString]" Name="FirstName" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Last Name&quot;).ToString]" Name="LastName" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Street&quot;).ToString]" Name="Street" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;City&quot;).ToString]" Name="City" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;State&quot;).ToString]" Name="State" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Postal Code&quot;).ToString]" Name="PostalCode" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Completion Date&quot;).ToString]" Name="CompletionDate" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Sale Date&quot;).ToString]" Name="SaleDate" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Install Date&quot;).ToString]" Name="InstallDate" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Warranty Length&quot;).ToString]" Name="WarrantyLength" />
+      <Variable x:TypeArguments="x:String" Default="5095459848" Name="PhoneNumber" />
+      <Variable x:TypeArguments="x:String" Default="testbot1@turnpointservices.com" Name="Email" />
+      <Variable x:TypeArguments="x:String" Default="D81236" Name="CustomerNumber" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\RPA-Developer\OneDrive - TurnPoint Services\Testing\Performer\" Name="FolderPath" />
+      <Variable x:TypeArguments="x:String" Name="RegistrationID" />
+      <Variable x:TypeArguments="x:String" Name="RegistrationPath" />
+      <Variable x:TypeArguments="x:String" Name="InvoicePath" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="ItemCodeList" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="SerialNumberList" />
+      <Variable x:TypeArguments="x:Boolean" Name="EquipmentWarrantyFailed" />
+      <Variable x:TypeArguments="x:String" Name="EquipmentWarrantyErrorText" />
+      <Variable x:TypeArguments="x:String" Default="[in_TransactionItem.SpecificContent(&quot;Price&quot;).ToString]" Name="EquipmentRetailPrice" />
+      <Variable x:TypeArguments="x:String" Name="PurchaseOrderNumber" />
+      <Variable x:TypeArguments="x:String" Name="PlanPrice" />
+      <Variable x:TypeArguments="x:String" Name="CertificateOfCoveragePath" />
+      <Variable x:TypeArguments="x:String" Name="ContractPlanPrice" />
+      <Variable x:TypeArguments="x:String" Name="ContractNumber" />
+      <Variable x:TypeArguments="x:String" Name="PlanName" />
+      <Variable x:TypeArguments="x:String" Name="LaborWarrantyCertPath" />
+      <Variable x:TypeArguments="x:String" Name="ClaimSubmissionNumber" />
+      <Variable x:TypeArguments="x:Boolean" Name="RegistrationUploaded" />
+      <Variable x:TypeArguments="x:Boolean" Name="PurchaseOrderCreated" />
+      <Variable x:TypeArguments="x:Boolean" Name="CertsUploaded" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="546,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[ItemCodeList]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[ItemCodes.Split(",").ToList]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[SerialNumberList]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[SerialNumbers.Split(",").ToList]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WarrantyYourWay - Invoke Workflow File (Application Layer\Warranty\WarrantyYourWay.xaml)" sap:VirtualizedContainerService.HintSize="546,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Application Layer\Warranty\WarrantyYourWay.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CustomerNumber">[CustomerNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FullAddress">[CustomerAddress]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PhoneNumber">[PhoneNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_RegistrationID">[RegistrationID]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_EquipmentDate">[CompletionDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[FolderPath]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="out_RegistrationPath">[RegistrationPath]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Email">[Email]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SerialNumberList">[SerialNumberList]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_EquipmentWarrantyFailed">[EquipmentWarrantyFailed]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ErrorText">[EquipmentWarrantyErrorText]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[EquipmentWarrantyFailed = False]" sap:VirtualizedContainerService.HintSize="546,1928" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1655" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ServiceTitan1 - Invoke Workflow File (Application Layer\ServiceTitan\ServiceTitan.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Application Layer\ServiceTitan\ServiceTitan1.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[FolderPath]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_InvoicePath">[InvoicePath]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RegistrationPath">[RegistrationPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[InvoiceNumber]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_RegistrationUploaded">[RegistrationUploaded]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LennoxPros1 - Invoke Workflow File (Application Layer\Lenox\LennoxPros1.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Application Layer\Lenox\LennoxPros1.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WarrantyLength">[WarrantyLength]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EquipmentRetailPrice">[EquipmentRetailPrice]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Street">[Street]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="out_PlanPrice">[PlanPrice]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_City">[City]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_State">[State]</InArgument>
+              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SerialNumberList">[SerialNumberList]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InstallDate">[InstallDate]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ServiceTitan2 - Invoke Workflow File (Application Layer\ServiceTitan\ServiceTitan2.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Application Layer\ServiceTitan\ServiceTitan2.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RegistrationPath">[RegistrationPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PlanPrice">[PlanPrice]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WarrantyTerm">[WarrantyLength]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[InvoiceNumber]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_PurchaseOrderNumber">[PurchaseOrderNumber]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_PurchaseOrderCreated">[PurchaseOrderCreated]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LennoxPros2 - Invoke Workflow File (Application Layer\Lenox\LennoxPros2.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Application Layer\Lenox\LennoxPros2.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InstallDate">[InstallDate]</InArgument>
+              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SerialNumberList">[SerialNumberList]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_State">[State]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_City">[City]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Street">[Street]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EquipmentRetailPrice">[EquipmentRetailPrice]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WarrantyLength">[WarrantyLength]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseOrderNumber">[PurchaseOrderNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PhoneNumber">[PhoneNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[FolderPath]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_LaborWarrantyCertPath">[LaborWarrantyCertPath]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_PlanName">[PlanName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_PlanPrice">[ContractPlanPrice]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_ContractNumber">[ContractNumber]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_CertificateOfCoveragePath">[CertificateOfCoveragePath]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ServiceTitan3 - Invoke Workflow File (Application Layer\ServiceTitan\ServiceTitan3.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Application Layer\ServiceTitan\ServiceTitan3.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[InvoiceNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LaborWarrantyCertPath">[LaborWarrantyCertPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CertificateOfCoveragePath">[CertificateOfCoveragePath]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CertsUploaded">[CertsUploaded]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <If Condition="[InstallDate = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="450,547" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,283" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SPIFRebate_Lennox - Invoke Workflow File (Application Layer\Lenox\SPIFRebate_Lennox.xaml)" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Application Layer\Lenox\SPIFRebate_Lennox.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[InvoiceNumber]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ProductsOnInvoice">[ItemCodeList]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SaleDate">[SaleDate]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_InstallDate">[InstallDate]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_ClaimSubmissionNumber">[ClaimSubmissionNumber]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_City">[City]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_State">[State]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_SerialNumberList">[SerialNumberList]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Street">[Street]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_InvoicePath">[InvoicePath]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateExcelReport - Invoke Workflow File (CreateExcelReport.xaml)" sap:VirtualizedContainerService.HintSize="546,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="CreateExcelReport.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelPath">C:\Users\RPA-Developer\OneDrive - TurnPoint Services\Testing\Report.xlsx</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[InvoiceNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CustomerAddress">[CustomerAddress]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LocationName">[LocationName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Street">[Street]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_City">[City]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_State">[State]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CompletionDate">[CompletionDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SaleDate">[SaleDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_InstallDate">[InstallDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_WarrantyLength">[WarrantyLength]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SerialNumberList">[SerialNumbers]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ItemCodeList">[ItemCodes]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_EquipmentWarrantyFailed">[EquipmentWarrantyFailed]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_EquipmentWarrantyErrorText">[EquipmentWarrantyErrorText]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_RegistrationUploaded">[RegistrationUploaded]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_PurchaseOrderCreated">[PurchaseOrderCreated]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PurchaseOrderNumber">[PurchaseOrderNumber]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_CertsUploaded">[CertsUploaded]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="546,79" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+  </Sequence>
+</Activity>

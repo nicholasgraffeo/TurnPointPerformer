@@ -1,0 +1,246 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_ServiceTitan" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2337,3168" sap2010:WorkflowViewState.IdRef="Login_ServiceTitan_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Logs in to the ServiceTitan website." DisplayName="Login_ServiceTitan" sap:VirtualizedContainerService.HintSize="1216,3103" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="UserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message start" sap:VirtualizedContainerService.HintSize="1154,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting Login_ServiceTitan&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="WarrantyRegistration_ServiceTitan_Credentials" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1154,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[UserName]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1154,2472" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1112,2265" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Login | ServiceTitan" sap:VirtualizedContainerService.HintSize="1050,2177" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="03102a3d-0b68-409e-81d4-344ec9470d05" Version="V2" WindowResize="Restore">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1897" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheckState DisplayName="Check App State 'DashboardCalls3Schedule…'" sap:VirtualizedContainerService.HintSize="954,1757" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="03102a3d-0b68-409e-81d4-344ec9470d05" Timeout="10" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message yes" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Already Logged in&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,1508" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message no" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Application not logged in&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Username" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="03102a3d-0b68-409e-81d4-344ec9470d05" Text="[UserName]" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="https://id.servicetitan.com/oauth2/default/v1/authorize?client_id=0oaf6o5yoeqOk7dm8697&amp;redirect_uri=https%3A%2F%2Flogin.servicetitan.com%2Ffederation%2Fokta%2Fsignin&amp;response_type=code&amp;scope=openid%20profile%20email%20offline_access&amp;code_challenge=pgPT3vfIIyewCP0ko-zZdOS9FWI1MwkogEICdvWFaYM&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638621957563933010.MDcwOTA4N2UtMDY3Ni00Y2IzLWIxNjgtOWJiOWNhOTljNTIyNGNlNGU4ZDAtNDE5MS00M2M3LWEzNDAtODBiNmMwYTViZTc1&amp;st_uri=https%3A%2F%2Fgo.servicetitan.com&amp;contextId=6dc76f64-430a-4873-9e09-d1e205ea64e2&amp;identityTrace=116ab7b500c04d4fb6b324ced670e204&amp;state=CfDJ8ETUo2Jst25Imani25IDD7yxXl9xEm-ASVYm-ZYv1RyX2lWGk9npjsu8ulNq4pmJqO60oqa1czX_5mJ9IpYj1yeiqjMM1CIgMhBwAyicx2IlTy_qgX1UAJDoLm_aQgdxR9pPzfjp4TwIfD5hlaN9eMtrwGmaClJRfzITmCvzIn5igaPj9zuKqs_SAE9jkbYgsPb9f77wnPlwTo3VQXW8Udqq-OiLeV9wpHwGgV5Uxk4YbRpHLyxaFSI442JW9O--uCfWjfolLPS1zZOkpz068kqQo3RLRSwGB-HWhKPi_4iKXRWiJ0vpTTMxH3QAtL3L-zkNktxSOLQmQDHKVYj3kGsBwyqbVq4l1SY5MaVFApyGbYnv415fT7t7O9-zJKSyfbM0_y72faZFHWdlaX-PAt0HtJQNrM4HyBDyAJfwIkVMEnDt_LfYlt2cYXXoAvuvMGj_N3Kkh0UPEcuxdo3Cfk3Gsl_eoYhqCBX-gxjqzimA5p7B0_IXHUAdhtfx5yDawZHcfejq46VzlAspj3BXrC5ELVuPts5rujWxNzuuxJELaDLQSd22z20mxDypwGUUj4URJmuSTcXzMFRPC6Jb7tzCA-pxZ5BpIc5Hx9CmLX-M-RfCKNcnIvXp3pvJ1xqn8ZHh6GbNsrB2fmv_mctuDuop4JEl4uZv91lLh2W_VHqE6a-17h4NTDEdaG7rFEfE1YbpJHqBhRM48LCvhrJ_PrCZh1vN9oQ3bLk8oo1FLBi0xFB0DD5Sx9z1h78JXl6pnvlnALhQsMiAGtbDgi1Y-o6AnvGO0qub8ay-GMnCHsj49wX72sUiTojw5G7Go3AVHgXqnEDhSLkj4GhPIlYyqaDl7uppqbN8htilhQPXY-BAkgsPOyYst4pxDUwezQSWs5uAIEG7eG4GB_uPdhqR6u8EdsFkziWZ-qjxWBNo5Dv9N6Fxd5PNJySlfkuOn92npsYfhJwrddsAXzrDltmFy5qXgiCiDvew-8zMG8o8VjZpFHlcYIutSk1URlwlE61JHa2uyz4CvDgxxOmCZ8iVyLr_XB_sm2M6V_Rrk8Y0uXQLTq3QM_UeowEHVcNvLpY3UH0C99F1_gbw8wXTEevwSWFizQ8VrK12r7WbvEOleCvsrExXahOLvjjhvlqteBKUqV17_GGwYth-zjRURnv51qSbnYE_dcWrIbraiNFzq-ZRcH9rnMpOPtNXJSZELztP-sZgNt_wl_4CNn9cOWuqJ5j1kf4VuvNybXTOAniLZADQvcIxcFzb336BsIrJhAuz0EIFCcnEyVLmLaHwYZwJkRHpLOgnKHE7dNqPwP3AX8L7J4HdG-IFR6bKX3cr9HHzg-6Qwafx6fJCtj_7DB0KzRSGjqOCvoW1f1oazYPDFiRc7f1iqIyVl1fq1lzfV0KwT3Nc9khZvjsj1qJMlVU87PaUA8ZMIY8SCdE4NdIbizlKOgBfHLNObqMJdxSqn92d9lPrPDqYqxIryoNTwG7TBxbjmNm9bJH8JiVpFyPOYvWDpakjllp28IpGSDp7Nj268dgqbPxnz5kHx22F6VDRiKR5K8cd9GgJlIcXGGy6K9p27YtrWt-mXhaWAOy-r-rKskUNq9zJtIcHNKjZJtpUy25Z1GoeeTeIYMqbRtqIrWuZ0PdQSZs6WfsPod_bbOhsqbX76MGcj1DGAAb8CjT4P9SdiSn0CkeaGu4iWwjEGzj_fQE_Ktlvl-Cg9XM-tcNRAfGuh-sIeHRCdcobzOKaLaRdOmrAs2DprxjDoCJqfO4x0mwoyulB_HjgVWRZFlzTuqQfMR6srZB8JtUFb3dC4eo&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=7.1.2.0" CVScreenId="3945ed25-6c19-4742-8f75-9d21e453b656" CvElementArea="118, 408, 373, 52" CvType="InputBox" DesignTimeRectangle="120, 409, 370, 49" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' name='username' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' name='username' type='text' class='' placeholder='Username' aaname='' /&gt;" Guid="a8f84887-72ca-4abd-ac72-1eb53bef397d" InformativeScreenshot="e23a5115b0f6137a173e8630e590f55a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | ServiceTitan' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <ui:LogMessage DisplayName="Log Message username" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Entered Username&quot;]" />
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into password" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="03102a3d-0b68-409e-81d4-344ec9470d05" SecureText="[Password]" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="https://id.servicetitan.com/oauth2/default/v1/authorize?client_id=0oaf6o5yoeqOk7dm8697&amp;redirect_uri=https%3A%2F%2Flogin.servicetitan.com%2Ffederation%2Fokta%2Fsignin&amp;response_type=code&amp;scope=openid%20profile%20email%20offline_access&amp;code_challenge=pgPT3vfIIyewCP0ko-zZdOS9FWI1MwkogEICdvWFaYM&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638621957563933010.MDcwOTA4N2UtMDY3Ni00Y2IzLWIxNjgtOWJiOWNhOTljNTIyNGNlNGU4ZDAtNDE5MS00M2M3LWEzNDAtODBiNmMwYTViZTc1&amp;st_uri=https%3A%2F%2Fgo.servicetitan.com&amp;contextId=6dc76f64-430a-4873-9e09-d1e205ea64e2&amp;identityTrace=116ab7b500c04d4fb6b324ced670e204&amp;state=CfDJ8ETUo2Jst25Imani25IDD7yxXl9xEm-ASVYm-ZYv1RyX2lWGk9npjsu8ulNq4pmJqO60oqa1czX_5mJ9IpYj1yeiqjMM1CIgMhBwAyicx2IlTy_qgX1UAJDoLm_aQgdxR9pPzfjp4TwIfD5hlaN9eMtrwGmaClJRfzITmCvzIn5igaPj9zuKqs_SAE9jkbYgsPb9f77wnPlwTo3VQXW8Udqq-OiLeV9wpHwGgV5Uxk4YbRpHLyxaFSI442JW9O--uCfWjfolLPS1zZOkpz068kqQo3RLRSwGB-HWhKPi_4iKXRWiJ0vpTTMxH3QAtL3L-zkNktxSOLQmQDHKVYj3kGsBwyqbVq4l1SY5MaVFApyGbYnv415fT7t7O9-zJKSyfbM0_y72faZFHWdlaX-PAt0HtJQNrM4HyBDyAJfwIkVMEnDt_LfYlt2cYXXoAvuvMGj_N3Kkh0UPEcuxdo3Cfk3Gsl_eoYhqCBX-gxjqzimA5p7B0_IXHUAdhtfx5yDawZHcfejq46VzlAspj3BXrC5ELVuPts5rujWxNzuuxJELaDLQSd22z20mxDypwGUUj4URJmuSTcXzMFRPC6Jb7tzCA-pxZ5BpIc5Hx9CmLX-M-RfCKNcnIvXp3pvJ1xqn8ZHh6GbNsrB2fmv_mctuDuop4JEl4uZv91lLh2W_VHqE6a-17h4NTDEdaG7rFEfE1YbpJHqBhRM48LCvhrJ_PrCZh1vN9oQ3bLk8oo1FLBi0xFB0DD5Sx9z1h78JXl6pnvlnALhQsMiAGtbDgi1Y-o6AnvGO0qub8ay-GMnCHsj49wX72sUiTojw5G7Go3AVHgXqnEDhSLkj4GhPIlYyqaDl7uppqbN8htilhQPXY-BAkgsPOyYst4pxDUwezQSWs5uAIEG7eG4GB_uPdhqR6u8EdsFkziWZ-qjxWBNo5Dv9N6Fxd5PNJySlfkuOn92npsYfhJwrddsAXzrDltmFy5qXgiCiDvew-8zMG8o8VjZpFHlcYIutSk1URlwlE61JHa2uyz4CvDgxxOmCZ8iVyLr_XB_sm2M6V_Rrk8Y0uXQLTq3QM_UeowEHVcNvLpY3UH0C99F1_gbw8wXTEevwSWFizQ8VrK12r7WbvEOleCvsrExXahOLvjjhvlqteBKUqV17_GGwYth-zjRURnv51qSbnYE_dcWrIbraiNFzq-ZRcH9rnMpOPtNXJSZELztP-sZgNt_wl_4CNn9cOWuqJ5j1kf4VuvNybXTOAniLZADQvcIxcFzb336BsIrJhAuz0EIFCcnEyVLmLaHwYZwJkRHpLOgnKHE7dNqPwP3AX8L7J4HdG-IFR6bKX3cr9HHzg-6Qwafx6fJCtj_7DB0KzRSGjqOCvoW1f1oazYPDFiRc7f1iqIyVl1fq1lzfV0KwT3Nc9khZvjsj1qJMlVU87PaUA8ZMIY8SCdE4NdIbizlKOgBfHLNObqMJdxSqn92d9lPrPDqYqxIryoNTwG7TBxbjmNm9bJH8JiVpFyPOYvWDpakjllp28IpGSDp7Nj268dgqbPxnz5kHx22F6VDRiKR5K8cd9GgJlIcXGGy6K9p27YtrWt-mXhaWAOy-r-rKskUNq9zJtIcHNKjZJtpUy25Z1GoeeTeIYMqbRtqIrWuZ0PdQSZs6WfsPod_bbOhsqbX76MGcj1DGAAb8CjT4P9SdiSn0CkeaGu4iWwjEGzj_fQE_Ktlvl-Cg9XM-tcNRAfGuh-sIeHRCdcobzOKaLaRdOmrAs2DprxjDoCJqfO4x0mwoyulB_HjgVWRZFlzTuqQfMR6srZB8JtUFb3dC4eo&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=7.1.2.0" CVScreenId="cfa7c645-41b9-45e3-b8cc-c4d0ef740749" CvElementArea="118, 486, 374, 52" CvType="InputBox" DesignTimeRectangle="120, 488, 370, 49" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' name='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' name='password' class='' placeholder='Password' aaname='' /&gt;" Guid="7f29a43d-be3e-495e-a140-874b5e74209a" InformativeScreenshot="40c09bc9c3a198f381cbbc93b99ca2c9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | ServiceTitan' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <ui:LogMessage DisplayName="Log Message password" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Entered password&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign In'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03102a3d-0b68-409e-81d4-344ec9470d05" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://id.servicetitan.com/oauth2/default/v1/authorize?client_id=0oaf6o5yoeqOk7dm8697&amp;redirect_uri=https%3A%2F%2Flogin.servicetitan.com%2Ffederation%2Fokta%2Fsignin&amp;response_type=code&amp;scope=openid%20profile%20email%20offline_access&amp;code_challenge=pgPT3vfIIyewCP0ko-zZdOS9FWI1MwkogEICdvWFaYM&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638621957563933010.MDcwOTA4N2UtMDY3Ni00Y2IzLWIxNjgtOWJiOWNhOTljNTIyNGNlNGU4ZDAtNDE5MS00M2M3LWEzNDAtODBiNmMwYTViZTc1&amp;st_uri=https%3A%2F%2Fgo.servicetitan.com&amp;contextId=6dc76f64-430a-4873-9e09-d1e205ea64e2&amp;identityTrace=116ab7b500c04d4fb6b324ced670e204&amp;state=CfDJ8ETUo2Jst25Imani25IDD7yxXl9xEm-ASVYm-ZYv1RyX2lWGk9npjsu8ulNq4pmJqO60oqa1czX_5mJ9IpYj1yeiqjMM1CIgMhBwAyicx2IlTy_qgX1UAJDoLm_aQgdxR9pPzfjp4TwIfD5hlaN9eMtrwGmaClJRfzITmCvzIn5igaPj9zuKqs_SAE9jkbYgsPb9f77wnPlwTo3VQXW8Udqq-OiLeV9wpHwGgV5Uxk4YbRpHLyxaFSI442JW9O--uCfWjfolLPS1zZOkpz068kqQo3RLRSwGB-HWhKPi_4iKXRWiJ0vpTTMxH3QAtL3L-zkNktxSOLQmQDHKVYj3kGsBwyqbVq4l1SY5MaVFApyGbYnv415fT7t7O9-zJKSyfbM0_y72faZFHWdlaX-PAt0HtJQNrM4HyBDyAJfwIkVMEnDt_LfYlt2cYXXoAvuvMGj_N3Kkh0UPEcuxdo3Cfk3Gsl_eoYhqCBX-gxjqzimA5p7B0_IXHUAdhtfx5yDawZHcfejq46VzlAspj3BXrC5ELVuPts5rujWxNzuuxJELaDLQSd22z20mxDypwGUUj4URJmuSTcXzMFRPC6Jb7tzCA-pxZ5BpIc5Hx9CmLX-M-RfCKNcnIvXp3pvJ1xqn8ZHh6GbNsrB2fmv_mctuDuop4JEl4uZv91lLh2W_VHqE6a-17h4NTDEdaG7rFEfE1YbpJHqBhRM48LCvhrJ_PrCZh1vN9oQ3bLk8oo1FLBi0xFB0DD5Sx9z1h78JXl6pnvlnALhQsMiAGtbDgi1Y-o6AnvGO0qub8ay-GMnCHsj49wX72sUiTojw5G7Go3AVHgXqnEDhSLkj4GhPIlYyqaDl7uppqbN8htilhQPXY-BAkgsPOyYst4pxDUwezQSWs5uAIEG7eG4GB_uPdhqR6u8EdsFkziWZ-qjxWBNo5Dv9N6Fxd5PNJySlfkuOn92npsYfhJwrddsAXzrDltmFy5qXgiCiDvew-8zMG8o8VjZpFHlcYIutSk1URlwlE61JHa2uyz4CvDgxxOmCZ8iVyLr_XB_sm2M6V_Rrk8Y0uXQLTq3QM_UeowEHVcNvLpY3UH0C99F1_gbw8wXTEevwSWFizQ8VrK12r7WbvEOleCvsrExXahOLvjjhvlqteBKUqV17_GGwYth-zjRURnv51qSbnYE_dcWrIbraiNFzq-ZRcH9rnMpOPtNXJSZELztP-sZgNt_wl_4CNn9cOWuqJ5j1kf4VuvNybXTOAniLZADQvcIxcFzb336BsIrJhAuz0EIFCcnEyVLmLaHwYZwJkRHpLOgnKHE7dNqPwP3AX8L7J4HdG-IFR6bKX3cr9HHzg-6Qwafx6fJCtj_7DB0KzRSGjqOCvoW1f1oazYPDFiRc7f1iqIyVl1fq1lzfV0KwT3Nc9khZvjsj1qJMlVU87PaUA8ZMIY8SCdE4NdIbizlKOgBfHLNObqMJdxSqn92d9lPrPDqYqxIryoNTwG7TBxbjmNm9bJH8JiVpFyPOYvWDpakjllp28IpGSDp7Nj268dgqbPxnz5kHx22F6VDRiKR5K8cd9GgJlIcXGGy6K9p27YtrWt-mXhaWAOy-r-rKskUNq9zJtIcHNKjZJtpUy25Z1GoeeTeIYMqbRtqIrWuZ0PdQSZs6WfsPod_bbOhsqbX76MGcj1DGAAb8CjT4P9SdiSn0CkeaGu4iWwjEGzj_fQE_Ktlvl-Cg9XM-tcNRAfGuh-sIeHRCdcobzOKaLaRdOmrAs2DprxjDoCJqfO4x0mwoyulB_HjgVWRZFlzTuqQfMR6srZB8JtUFb3dC4eo&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=7.1.2.0" CVScreenId="9017cc5f-8e01-4aed-a06c-ce411c83006d" CvElementArea="118, 605, 373, 45" CvTextArea="279, 619, 52, 18" CvTextArgument="Sign In" CvType="Button" DesignTimeRectangle="118, 605, 372, 45" DesignTimeScaleFactor="1" ElementType="Button" Guid="c472f062-0426-48a3-8ce4-250a4c271587" InformativeScreenshot="855f2f9e60ac66c7c5cf4d91386a6c60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | ServiceTitan' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <ui:LogMessage DisplayName="Log Message sign in" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clicked on sign in&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Calls" DesignTimeRectangle="8, 139, 1600, 36" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='app-base' tag='DIV' innertext='DashboardCall*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='app-base' tag='DIV' innertext='DashboardCall*' type='' class='he-bottom__TyHhf d-if flex-grow-1 flex-basis-0 justify-content-center center__e45xd' aaname='' check:text='DashboardCalls3ScheduleDispatchAccountingInventoryFollow UpReportsPricebookProjects' /&gt;" Guid="9328ed60-d732-408b-bf13-682a5f9c85d6" InformativeScreenshot="65aa85fcd2911c43b9f6650ad576ac97.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calls - ServiceTitan' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <uix:NCheckState DisplayName="Check App State 'DashboardCalls3Schedule…'" sap:VirtualizedContainerService.HintSize="954,50" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="03102a3d-0b68-409e-81d4-344ec9470d05" Timeout="10" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,256" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message yes" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Logged in successfully&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,256" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message no" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Login failed&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Calls" DesignTimeRectangle="8, 139, 1600, 36" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='app-base' tag='DIV' innertext='DashboardCall*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='app-base' tag='DIV' innertext='DashboardCall*' type='' class='he-bottom__TyHhf d-if flex-grow-1 flex-basis-0 justify-content-center center__e45xd' aaname='' check:text='DashboardCalls3ScheduleDispatchAccountingInventoryFollow UpReportsPricebookProjects' /&gt;" Guid="9328ed60-d732-408b-bf13-682a5f9c85d6" InformativeScreenshot="65aa85fcd2911c43b9f6650ad576ac97.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calls - ServiceTitan' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1616, 750" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHLSURBVFhHvVfLcYMwEFUJKcGXZCRyoYSUkA6cEnLJ2IJLOrA7cDpwCSmBEijBJTi7+oAMC1qEyJt5gwektx9pV7JgY/f5JOTxQxTVRaiqgecNnndD+xvfXYSs90Iedm5WBsjDm1D6tzPGpXFmjSMYsapPpPgSJjlSVCVMbkdi6Wz5TqDxcH3z8Saev0pnZQLo5TbGPWecQON50z7F1uyvEZT+IQZHqMFhJPVthq/65Kw62OjpwUNKKEkszWEUtlz5QeD4DpyJuDceJk0AmxUrKxCIncCJHgTZZQTgbmaTRVmBx8THkFLvnTQfZkkIrZBoO5p+CZ0sFbEWbrSLuiE/enLWfQqxLBS6wc43v1ZrUH7DeUJo9rxBmsgPnq2TSkesuZEve/6DA7ElINvmAlCaPWEJttyESr+Tmp5mE8pYF/QdKwGquo71ApoyZDWihCywG1y8VJB4DuRvxZ0m79IJ5wHceGPAbLGMhx021rEeqK/iBTZXCKwUo8EKxHKUUVWdR4OiTLyQkOeL2QsJYos5d7RvdyO2RO3oZt7KCdREbRbQy6zLAVps4x7WiYSb8pDH87rzJNURf3vOBnTE3njRGfrvOZYXjmFHLMQfQNwBmlsvv/kAAAAASUVORK5CYII=" InformativeScreenshot="95f4a8ed9fda9279b4e136665d86b315.jpg" Selector="&lt;html app='chrome.exe' url='go.servicetitan.com/Auth/Login' /&gt;" Title="Login | ServiceTitan" Url="go.servicetitan.com/Auth/Login" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1154,164" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Finished Login_ServiceTitan&quot;]" />
+  </Sequence>
+</Activity>

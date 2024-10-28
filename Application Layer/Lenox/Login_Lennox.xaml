@@ -1,0 +1,250 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Lennox" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1571,3411" sap2010:WorkflowViewState.IdRef="Login_Lennox_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Logs in to the LennoxPros website using credentials stored in Orchestrator." DisplayName="Login_Lennox" sap:VirtualizedContainerService.HintSize="1216,3346" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="UserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message start" sap:VirtualizedContainerService.HintSize="1154,173" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Starting Login_Lennox&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="WarrantyRegistration_LennoxCredentials" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1154,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[UserName]" />
+    <ui:RetryScope DisplayName="Retry Scope login" sap:VirtualizedContainerService.HintSize="1154,2715" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1112,2508" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: HVAC Supplier | LennoxPros" sap:VirtualizedContainerService.HintSize="1050,2420" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="eb95e944-39d5-4ad5-a736-b109f81aa3e5" Version="V2" WindowResize="Restore">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2180" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign In'" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eb95e944-39d5-4ad5-a736-b109f81aa3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" CVScreenId="7653ad4d-da2d-4059-b5d2-e6875831cf98" CvElementArea="1494, 106, 89, 33" CvTextArea="1515, 115, 45, 16" CvTextArgument="Sign In" CvType="Button" DesignTimeRectangle="1496, 108, 85, 28" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='samlSignInLink' tag='A' aaname='Sign In' innertext='Sign In' /&gt;" FuzzySelectorArgument="&lt;webctrl id='samlSignInLink' tag='A' aaname='Sign In' innertext='Sign In' type='' class='login-link btn-signin NEEDS_AUTHENTICATION' check:text='Sign In' /&gt;" Guid="6facd28b-2d77-46e5-ace2-8b5f429adfad" InformativeScreenshot="1168b193d46ecffa6d37c8727fa10688.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Sequence DisplayName="entering Email and password" sap:VirtualizedContainerService.HintSize="954,1401" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="eb95e944-39d5-4ad5-a736-b109f81aa3e5" Text="[UserName]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://id.access.lennoxpros.com/accesslennox.onmicrosoft.com/B2C_1A_lennoxpros_Signup_Signin_SAML/samlp/sso/login" CVScreenId="3d002b17-209f-4b30-ae8c-57a688cc634e" CvElementArea="641, 417, 316, 42" CvType="InputBox" DesignTimeRectangle="642, 418, 315, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='signInName' tag='INPUT' aaname='Email Address' /&gt;" FuzzySelectorArgument="&lt;webctrl id='signInName' tag='INPUT' aaname='Email Address' type='text' class='textInput' placeholder='Email Address' /&gt;" Guid="844d1e32-f989-4846-b7e0-22b9bbdaea64" InformativeScreenshot="694920b800603fce4c3b2deb73f24c54.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | Access Lennox | LennoxPros' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="3d002b17-209f-4b30-ae8c-57a688cc634e" CvTextArea="641, 397, 94, 14" CvTextArgument="Email Address" CvType="Text" DesignTimeRectangle="642, 394, 92, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl id='signInName_label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='signInName_label' tag='LABEL' type='' class='' aaname='Email Address' check:innerText='Email Address' /&gt;" Guid="36ded835-dea1-4c22-b153-23654a1714c9" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <ui:LogMessage DisplayName="Log Message Email" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Entered email&quot;]" />
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,286" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="eb95e944-39d5-4ad5-a736-b109f81aa3e5" SecureText="[Password]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://id.access.lennoxpros.com/accesslennox.onmicrosoft.com/B2C_1A_lennoxpros_Signup_Signin_SAML/samlp/sso/login" CVScreenId="5d5176f2-14bb-4faf-87b8-d1d0996c84c3" CvElementArea="640, 488, 318, 43" CvType="InputBox" DesignTimeRectangle="642, 490, 315, 40" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' aaname='Password' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' aaname='Password' type='password' class='textInput col-12' placeholder='Password' /&gt;" Guid="93c0a283-d7c0-4165-ab62-adf2d7974b63" InformativeScreenshot="3875c44d483d57cc8c8b9330ba6e46e1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | Access Lennox | LennoxPros' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="5d5176f2-14bb-4faf-87b8-d1d0996c84c3" CvTextArea="641, 469, 64, 14" CvTextArgument="Password" CvType="Text" DesignTimeRectangle="642, 466, 78, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl id='password_label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password_label' tag='LABEL' type='' class='col-auto pl-0' aaname='Password' check:innerText='Password' /&gt;" Guid="0645a9f1-866f-47b0-b47e-6ac79e28de47" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                      </uix:NTypeInto>
+                      <ui:LogMessage DisplayName="Log Message password" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Entered Password&quot;]" />
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign In'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eb95e944-39d5-4ad5-a736-b109f81aa3e5" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://id.access.lennoxpros.com/accesslennox.onmicrosoft.com/B2C_1A_lennoxpros_Signup_Signin_SAML/samlp/sso/login" CVScreenId="1a03f80d-62c8-4eb2-bf5f-1e7bea1acb63" CvElementArea="640, 555, 135, 45" CvTextArea="679, 569, 54, 21" CvTextArgument="Sign In" CvType="Button" DesignTimeRectangle="642, 558, 130, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Sign In' innertext='Sign In' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Sign In' innertext='Sign In' type='' class='' check:text='Sign In' /&gt;" Guid="5b99690e-9c9e-4eff-a5fd-52cce978b620" InformativeScreenshot="45cccfd455b60a12978e3e053a4462a3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login | Access Lennox | LennoxPros' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message sign in" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Clicked sign in&quot;]" />
+                    </Sequence>
+                    <uix:NCheckState DisplayName="Check App State 'Welcome, Test Bot1'" sap:VirtualizedContainerService.HintSize="954,500" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="eb95e944-39d5-4ad5-a736-b109f81aa3e5" Timeout="10" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message success" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;login successful&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message fail" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;login failed&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" CVScreenId="82f02a39-727e-49e7-93ac-1297c9bf6c76" CvElementArea="1569, 115, 18, 18" CvTextArea="1456, 117, 115, 14" CvTextArgument="Welcome, Test Bot1" CvType="ArrowButton" DesignTimeRectangle="1449, 105, 142, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='lp-dropdown-schedule' tag='BUTTON' visibleinnertext='Welcome,*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='lp-dropdown-schedule' tag='BUTTON' visibleinnertext='Welcome,*' type='button' class='btn lp-nav-toggle' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Welcome, Test Bot1 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:text='Welcome, Test Bot1' /&gt;" Guid="09164ccb-8dfb-45d2-b3f9-f685b9bd98ad" InformativeScreenshot="2d5670160b5d7792187ead5e3988fd28.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1616, 750" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPYzjG48YKxHFAfBGIvwHxPyD+jwOD5EBqQGpBelhBBoAYb4AYmwZ8GKQnDmTAeSRBUvF5kAFf0QRJwV9BBmD3M7crBHPBsAuEBokh1P0DGYCm0PX/cX6P/yfF/f6fkgv5f0Y18v9ZzZj/Z7Vi/59Rj/5/WiH0/3Eh7/9HOYEGAvUygDSflAr4f043/v85/YT/lxxy/19xK/p/yS7n/zX/yv+XnfL/34xt/n8zpvn/7bQuILvl/+307v9XfcrAFjEc5XAGK7wZ1/L/UfOC//dKpv5/s/7Q/yd9K8H00/5V/x9Uzfp/N3/i/1dLd0NcoRj2/82Gw2DDwV64Vzzl/62ENqABC//fye77/6R7+f9n09b/f9yx9P/zWZv+3yuc/P9ewaT/T3pXAL0V/P+iZeb/V0t2/T9vlAw0gNcd4k+N6P9ntYH+VIn4f0o66P9pZSAtE/T/vEHS/8vOBUCv5YFdej245v+t+FagdxPBYQcJRHgAIoU0jOZzBwcaKFBPivv/PyHsjYglcCDiT7oIDNLAjSEOjkaKExLFSZnizERBdnZjBQCr5zChXiiH7QAAAABJRU5ErkJggg==" InformativeScreenshot="01f23961c25f1ebcc0dcd02e29d6b87e.jpg" Selector="&lt;html app='chrome.exe' url='https://www.lennoxpros.com/' /&gt;" Title="HVAC Supplier | LennoxPros" Url="https://www.lennoxpros.com/" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message end" sap:VirtualizedContainerService.HintSize="1154,164" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Finsihed Login_Lennox&quot;]" />
+  </Sequence>
+</Activity>

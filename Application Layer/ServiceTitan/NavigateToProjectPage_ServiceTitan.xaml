@@ -1,0 +1,243 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToProjectPage_ServiceTitan" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_InvoiceNumber" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,1687</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>NavigateToProjectPage_ServiceTitan_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavigateToProjectPage_ServiceTitan" sap:VirtualizedContainerService.HintSize="616,1622" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="554,1534" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,1336" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Calls - ServiceTitan" sap:VirtualizedContainerService.HintSize="450,1248" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a69aecbe-2c8a-4539-9be0-5e62769a1ca6" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1008" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a69aecbe-2c8a-4539-9be0-5e62769a1ca6" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Calls" CVScreenId="51093b95-0b87-47c7-8c17-0eac63bcb3a4" CvTextArea="2061, 104, 28, 19" CvTextArgument="=Q" CvType="Text" DesignTimeRectangle="2053, 80, 45, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl aaname='Search: Find jobs, customers, invoices, or other information' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search: Find jobs, customers, invoices, or other information' tag='A' type='' class='navigation-link__W53pE navigation-item__Wci3o' /&gt;" Guid="74882e15-45f9-4b56-8a2a-6a212e51e7f8" InformativeScreenshot="969313de56c415713c9a1713da26a062.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calls - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="51093b95-0b87-47c7-8c17-0eac63bcb3a4" CvElementArea="2106, 100, 28, 27" CvTextArea="2114, 106, 12, 16" CvType="Icon" DesignTimeRectangle="2108, 102, 25, 25" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;i&amp;gt;svg' idx='2' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='svg' aaname='' /&gt;" Guid="0d8442a3-5ce4-4b99-a06b-f52b09d466cd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM6SURBVEhL7VVLKLRRGP4Xk9uCKWQj5TIhCQsblw0pzUKZMtkohXILpWSnKGGLWRC2pmGhmabQiGRBLhuJ1YxLEQpFLtH797zN93W+75zB4vevnHo6zfM8533mO9c/FouF/jd+Q38U3w6tqKigkZER2tjYoLOzM3p7e+N+fX2dhoeHqby8XDlOhS9D8/LyKBAI0Hea3++n7OxsZR0Rn4bW1dXR4+NjuCTR9fU1TU9PU2trK9ntdmpra+Pft7e3YQfRw8MDa6p6GiKGOp3OcBmiq6srampqoqioKKU3Ojqa/4AW/vHxQdXV1UovoAwtKiqi5+dnLrC7u0upqam6VlZWRlNTU7S8vMx9SUmJrmVkZNDh4SGPwxdnZmbqmghlKDYHWigUoqSkJJ1vaWnhrxDb+/s7NTQ06J709HS6ublhbX5+XudFSKGlpaU8AA1fpfGFhYW8YxE6MTHB6+1yudiHWcnJydG9DoeDeTTV10qho6OjbPZ6vQZ+YGCA+ZmZGQPvdruZ7+vrM/B7e3vMd3d3G3hACt3a2mIzNobI19bW0uDgIM+EyPf397N/dnbWwA8NDTG/uLho4AEp9OTkhM3i1EYCdjMuC7Te3l6DVlNTw/z29raBB6TQi4sLNhcUFBh4M3Jzc2lzc5O9KIxjI+rFxcWsYTOKPCCFHhwcsLmystLAi4iPj6fz83P24bayWq2Sp6qqinWsrVmTQpeWlthsXlMR7e3t7Dk+PqaYmBilp6uriz0LCwuSJoV2dHSweWVlxcCLwHnFWvb09Ch1QFtreM2aFJqWlsbnEQ03k1kHbDYbTz96la6d9ZeXF0pJSZF0KRQYHx/nQdgoqvt2bGyMdfRmLS4ujvb391nHU2jWAWVocnIyBYNBHjg3NycF45XB9KEX+djYWF5DtKOjI0pISDDoGpShQH5+Pt3f33OBtbW1L99JXJM7OzvsxxOYlZWl9AERQwGctbu7Oy6Ei93j8VB9fT2vp4bGxkby+XzsQbu8vOSHX1VPw6ehAC5yTPHr62u4rLo9PT3R5OQkvzKqOiK+DNWQmJhInZ2d/OzhYsCfOD09pdXVVWpubo64fip8O/Rf4jf0B2GhvwY3SbWSUgZ0AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NSelectItem DisplayName="Select Item 'Search'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Invoice" ScopeIdentifier="a69aecbe-2c8a-4539-9be0-5e62769a1ca6" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="15">
+                          <x:String>Application For Payment</x:String>
+                          <x:String>Batch</x:String>
+                          <x:String>Call</x:String>
+                          <x:String>Customer</x:String>
+                          <x:String>Equipment</x:String>
+                          <x:String>Estimate</x:String>
+                          <x:String>Form</x:String>
+                          <x:String>Invoice</x:String>
+                          <x:String>Job</x:String>
+                          <x:String>Lead</x:String>
+                          <x:String>Location</x:String>
+                          <x:String>Payment</x:String>
+                          <x:String>Project</x:String>
+                          <x:String>Purchase Order</x:String>
+                          <x:String>SMS</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Search" CVScreenId="a71c7e73-e184-4929-aa6a-d164ea0c5c29" CvElementArea="81, 278, 304, 53" CvType="InputBox" DesignTimeRectangle="83, 279, 300, 51" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' type='' class='ui search selection dropdown Select' aaname='' /&gt;" Guid="24a764d2-6a9a-4a57-a7e5-6dacaa2473b0" InformativeScreenshot="39ac7358be41aff1aecb4b9169af7ed2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="a71c7e73-e184-4929-aa6a-d164ea0c5c29" CvTextArea="82, 226, 106, 28" CvTextArgument="Search" CvType="Text" DesignTimeRectangle="83, 218, 105, 41" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='Headline m-b-2 m-r-1 d-ib Headline--large' aaname='Search' check:innerText='Search' /&gt;" Guid="28464b5c-644f-4aab-87b6-e97b4d7a7c58" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,286" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="a69aecbe-2c8a-4539-9be0-5e62769a1ca6" Text="[in_InvoiceNumber + &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Search" CVScreenId="281714db-5035-4752-917a-ceb5639ec23c" CvElementArea="102, 473, 269, 45" CvType="InputBox" DesignTimeRectangle="105, 477, 262, 38" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='formfield_id_:rj:' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='formfield_id_:rj:' tag='INPUT' type='text' class='' placeholder='Invoice Number' aaname='Invoice Number' /&gt;" Guid="4aabf568-f2ee-49ba-83e2-caa59bed73a7" InformativeScreenshot="91f08beb84e9e96b6bf3c319be96b708.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="281714db-5035-4752-917a-ceb5639ec23c" CvTextArea="103, 445, 126, 16" CvTextArgument="Invoice Number" CvType="Text" DesignTimeRectangle="104, 442, 265, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;label' parentid='app-base' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='app-base' tag='LABEL' class='Field__html-label' aaname='' check:innerText='Invoice Number' /&gt;" Guid="d8bc4a3a-934e-4a91-b2bb-dc8937795c24" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '312346'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a69aecbe-2c8a-4539-9be0-5e62769a1ca6" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Search" CVScreenId="30999f69-de74-46db-bb1a-5d5f78dae376" CvTextArea="424, 451, 65, 15" CvTextArgument="760249" CvType="Text" DesignTimeRectangle="426, 447, 63, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='k-grid-table' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='k-grid-table' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='{0}' /&gt;&quot;, in_InvoiceNumber)]" Guid="bd8d60e5-8eea-44a5-8145-88fbcb893814" InformativeScreenshot="1f6b3cd38362f025197921f1bde25300.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="30999f69-de74-46db-bb1a-5d5f78dae376" CvTextArea="425, 369, 71, 16" CvTextArgument="Invoice #" CvType="Text" DesignTimeRectangle="426, 366, 70, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='k-column-title' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='k-column-title' type='' tag='SPAN' aaname='Invoice #' check:innerText='Invoice #' /&gt;" Guid="3dcbb8f1-c115-4c1c-b8f7-ea47d195f433" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPxSURBVFhHvZZbiJVVFMfHlEhHMcSewktKiCESeXnQDETNtCKwl6xpzEg9gyQzCoY3grw9RCHqg/rQBSOjG0oQ0U1LXyoxMiKth5QoREXIe5Ta77dZezhzzly+cxz6w4+z99prrb3P/vZe39dwM2outQ6BObAEtsPO4EWYB0PCtfdE0gGwGA7BDTgNX0Oe/DM4C479C7thbITfnEj0BDihbIDxMZREf0A0ba8CFyFbwlyfTAzvwlV4yX4MtQvbQrg32lPARTr5zuRQr0jg5G7xSUgTVAr7SDgb7RHwJzj5e8mhXi0otd5KEif/Fu4Mc5UYexkOR/sTcPIz0Jgc6hUJXoUTMDRMnYrxH+AwTIP83NfFcH0iwWy4BKPC1C5s7sxEmACT4Tr8Bq9DXsCScK9dBPvcj8PTYdI2FDbCMciTdMf2CK1dBLfB59G1Pxcugv90LyyD6eAOuBOzoHIB+td+/wkaBBaSe6LvRNfA5zwmOXUixlqhchGen9HhUkwErIAPot0Iv4PJuvw3jA2HNXAKfgWr33owrngRwtlnbwGZHf2lYJJryaFC2O+HT+ELcEIXYZk2T/mOpN3sUWVBfaJvDUhJkkOouWVZX2xb4GPwHLwGb8CDMB6eAm+QsfsirHvhmP99moxftz//A5mVHBHtzbA72svB0tsM34G+P8ev+IKqKt1Vwslrdi6C3Frvd04iH4Wrvj/C9GjfBhYgJ/K1vCnsj0N+H7ytrUfhOD8CPL3vRLucReG3FUxuXfCZe1aGpSQh+i4qP8LzYe5ZOG+KoIzv9IfB5/oXLAw/+x+CJdgX1WTt85e29aHdAt+D8QfAmjDD8ULCuQRXwAR/L2hp6xf2x8J2R3IM0XcXnoO7bWtrWtzqQf0KfJF5Ld9KzkVFwH3gnXbClWHW/iU8EN0k+k+Cn2RjYTVYF7bBN3AerJbmSbtUWATkb4HLMC1sPtvnk0OIvhN6JvpDhztP38PpotxVz9a4GComAlzEL+C9Tv+c3+FpsEzYrAlVr2Bs48DFuRvuguehww72KAJeiOBLTaX0bBub41xkYfNLyFK8PEztwnY7GG99eDbMxUXQ1Eggg2ERrInhdmG7C7wVP8FaeAY8oJbro1CsJFeKQA9k+QIsWhfgFehwI5pKbbdg2wHZ3+c+M4aLi6D+0bSdC1RaQNisDdnm1vrPj4DfDNnuuak6L4VEoC+ZPeAW+i2Qkw4MF33eL7N3hv9+UrjXLoLXlSWTDiWVvosrH++KbRFSuwj23ltkdsEjYU6ib6XrbMJKDkZI74mkj8J++Ccm6Y5ShPW+SG71ewj8QPkDKid/M1z/HzHhDPDryBuQvg26VkPDfz8CQZizRA+4AAAAAElFTkSuQmCC" InformativeScreenshot="d202437f6385bf1b97a31c29ce9d1677.jpg" Selector="&lt;html app='chrome.exe' title='Calls - ServiceTitan' /&gt;" Title="Calls - ServiceTitan" Url="https://go.servicetitan.com/#/Calls" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>

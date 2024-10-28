@@ -1,0 +1,962 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SPIFRebate_Lennox" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_InvoiceNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_ProductsOnInvoice" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_SaleDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_InstallDate" Type="InArgument(x:String)" />
+    <x:Property Name="out_ClaimSubmissionNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_City" Type="InArgument(x:String)" />
+    <x:Property Name="in_State" Type="InArgument(x:String)" />
+    <x:Property Name="in_PostalCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_SerialNumberList" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_Street" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoicePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,11345</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SPIFRebate_Lennox_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Navigate to MyLennoxSpif website, input all required information about the rebate, and extract the Claim Submission Number at the end." DisplayName="SPIFRebate_Lennox" sap:VirtualizedContainerService.HintSize="1208,11280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="FirstNameShortened" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1146,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting SPIFRebate_Lennox&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Lennox - Invoke Workflow File (Application Layer\Lenox\Login_Lennox.xaml)" sap:VirtualizedContainerService.HintSize="1146,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Application Layer\Lenox\Login_Lennox.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1146,1598" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,1311" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: HVAC Supplier | LennoxPros" sap:VirtualizedContainerService.HintSize="450,1223" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="df26c55f-188c-40b8-845e-6de395fee7f0" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,983" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'A #navigation'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df26c55f-188c-40b8-845e-6de395fee7f0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" DesignTimeRectangle="8, 192, 50, 45" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl href='#navigation' parentid='page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl href='#navigation' parentid='page' tag='A' type='' class='' aaname='' /&gt;" Guid="ce91d653-d53d-471e-80f6-a7ec5b8673fc" InformativeScreenshot="ca73672829b931cb54ec490cdfb4eddc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sales Tools'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df26c55f-188c-40b8-845e-6de395fee7f0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" CVScreenId="78a2920a-e246-406f-8f79-3aaf6e623c50" CvElementArea="231, 556, 19, 23" CvTextArea="29, 559, 73, 14" CvTextArgument="Sales Tools" CvType="ArrowButton" DesignTimeRectangle="8, 549, 260, 35" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='btn-v2' parentid='page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btn-v2' parentid='page' tag='A' type='' aaname='Sales Tools &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;            &amp;#x9;' check:innerText='Sales Tools' /&gt;" Guid="481c1632-9728-49ae-84dd-194b674ad120" InformativeScreenshot="c897c4f515cb18e0a56f8c6df229b83a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sales Person Spifs'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df26c55f-188c-40b8-845e-6de395fee7f0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/" CVScreenId="a4ef9362-5ee7-4c9e-a1c0-615dabc35146" CvTextArea="293, 936, 119, 17" CvTextArgument="Sales Person Spifs" CvType="Text" DesignTimeRectangle="292, 929, 214, 29" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Sales Person Spifs' parentid='page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sales Person Spifs' parentid='page' tag='A' type='' class='aaa ' check:innerText='Sales Person Spifs' /&gt;" Guid="cf6816e4-5b77-4199-8b6c-cc21e8e84096" InformativeScreenshot="e41aee7db95c8c11dfaaaf74d5b0ee3c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Check Claim'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df26c55f-188c-40b8-845e-6de395fee7f0" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.lennoxpros.com/partner-resources/sales/salesperson-spiffs" CVScreenId="09e2fc78-1839-4b71-8fd7-aed1637c6d9d" CvElementArea="740, 539, 381, 43" CvTextArea="772, 552, 318, 16" CvTextArgument="Check Claim Status/Enter Dealer Claims" CvType="Button" DesignTimeRectangle="742, 541, 379, 40" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='             Check Claim Status/Enter Dealer Claims' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             Check Claim Status/Enter Dealer Claims' parentid='content' tag='A' type='' class='btn btn-primary h-100 w-100 mb-1 mb-md-0 mx-0 px-0 px-md-1' check:innerText='Check Claim Status/Enter Dealer Claims' /&gt;" Guid="f7e2fee2-c82d-4eea-927e-be836f8daa4e" InformativeScreenshot="cdfce8372952aada5f5fe58b600cddfb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Salesperson Spiffs | LennoxPros' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPYzjG48YKxHFAfBGIvwHxPyD+jwOD5EBqQGpBelhBBoAYb4AYmwZ8GKQnDmTAeSRBUvF5kAFf0QRJwV9BBmD3M7crBHPBsAuEBokh1P0DGYCm0PX/cX6P/yfF/f6fkgv5f0Y18v9ZzZj/Z7Vi/59Rj/5/WiH0/3Eh7/9HOYEGAvUygDSflAr4f043/v85/YT/lxxy/19xK/p/yS7n/zX/yv+XnfL/34xt/n8zpvn/7bQuILvl/+307v9XfcrAFjEc5XAGK7wZ1/L/UfOC//dKpv5/s/7Q/yd9K8H00/5V/x9Uzfp/N3/i/1dLd0NcoRj2/82Gw2DDwV64Vzzl/62ENqABC//fye77/6R7+f9n09b/f9yx9P/zWZv+3yuc/P9ewaT/T3pXAL0V/P+iZeb/V0t2/T9vlAw0gNcd4k+N6P9ntYH+VIn4f0o66P9pZSAtE/T/vEHS/8vOBUCv5YFdej245v+t+FagdxPBYQcJRHgAIoU0jOZzBwcaKFBPivv/PyHsjYglcCDiT7oIDNLAjSEOjkaKExLFSZnizERBdnZjBQCr5zChXiiH7QAAAABJRU5ErkJggg==" InformativeScreenshot="deb260a6982536b828636139e2701e79.jpg" Selector="&lt;html app='chrome.exe' title='HVAC Supplier | LennoxPros' /&gt;" Title="HVAC Supplier | LennoxPros" Url="https://www.lennoxpros.com/" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <Delay Duration="00:00:09" sap:VirtualizedContainerService.HintSize="1146,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Lennox SPIF" sap:VirtualizedContainerService.HintSize="1146,8900" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1112,8651" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="Index" />
+              <Variable x:TypeArguments="x:String" Name="SerialNumberTemp" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit a Claim'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/Home" CVScreenId="846a2a2f-ffb0-467f-aa46-473885933358" CvElementArea="682, 489, 154, 47" CvTextArea="701, 504, 116, 15" CvTextArgument="Submit a Claim" CvType="Button" DesignTimeRectangle="683, 491, 153, 43" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='sampleResponseBody' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sampleResponseBody' tag='A' type='' class='btn btn-primary' aaname='Submit a Claim' check:innerText='Submit a Claim' /&gt;" Guid="b8aedcf6-2c9c-4020-82d6-18e7bbf9bcfa" InformativeScreenshot="618696e7a215c6b3a6947a851115d18b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="1050,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'What promotions'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="Rebate" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="da3c8a5c-90f6-4609-82bf-21f8c23527f0" CvTextArea="559, 520, 213, 20" CvTextArgument="Select what you are claiming" CvType="Text" DesignTimeRectangle="560, 520, 606, 22" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='user-success' aaname='' /&gt;" Guid="f1e429f5-a9b9-407f-9f88-6666a4e7ca32" InformativeScreenshot="4a5a9ab53dd1d60627a6d50664fc077a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="da3c8a5c-90f6-4609-82bf-21f8c23527f0" CvTextArea="547, 472, 355, 20" CvTextArgument="What promotions would you like to claim? *" CvType="Text" DesignTimeRectangle="549, 472, 353, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='What promotions would you like to claim?' check:innerText='What promotions would you like to claim?' /&gt;" Guid="0a8081e1-face-44f6-adc9-cf68e27f6021" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoice Number'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="e65e50c2-c523-4b58-873c-ad3f08039e5e" CvTextArea="648, 557, 47, 14" CvTextArgument="Rebate" CvType="Text" DesignTimeRectangle="639, 548, 640, 34" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl aria-role='option' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' tag='DIV' type='' class='ng-option ng-option-marked ng-star-inserted' aaname='' check:innerText='Rebate' /&gt;" Guid="22e56751-3607-475b-942f-0cb0dd199e20" InformativeScreenshot="627c49b1d4e1d65d379b714adffd4e12.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="e65e50c2-c523-4b58-873c-ad3f08039e5e" CvTextArea="617, 631, 145, 20" CvTextArgument="Invoice Number *" CvType="Text" DesignTimeRectangle="618, 631, 143, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Invoice Number' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invoice Number' tag='LABEL' type='' class='control-label' check:innerText='Invoice Number' /&gt;" Guid="4be18484-c090-4ad9-826a-2de0f113abda" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_InvoiceNumber]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="470dc1ed-c565-42ec-bea9-6a9d90ef1560" CvElementArea="809, 789, 335, 38" CvType="InputBox" DesignTimeRectangle="812, 791, 331, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='InvoiceNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='InvoiceNumber' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted' aaname='Invoice Number' /&gt;" Guid="1469cce2-5def-406b-89c6-b55882026ee1" InformativeScreenshot="119db4df0b500bd0be1ffc6b8f44baa8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="470dc1ed-c565-42ec-bea9-6a9d90ef1560" CvTextArea="811, 751, 145, 20" CvTextArgument="Invoice Number *" CvType="Text" DesignTimeRectangle="812, 751, 143, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Invoice Number' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invoice Number' tag='LABEL' type='' class='control-label' check:innerText='Invoice Number' /&gt;" Guid="c745fe62-3e8a-4fd9-b05f-e40d4b13355e" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Invoice Image'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="e6c1516e-3194-4d20-b2a2-af38636aa161" CvElementArea="801, 825, 178, 47" CvTextArea="819, 840, 141, 19" CvTextArgument="Add Invoice Image" CvType="Button" DesignTimeRectangle="802, 827, 177, 44" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='BasicInfo' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='BasicInfo' tag='BUTTON' type='' class='btn btn-primary' aaname='Add Invoice Image' check:innerText='Add Invoice Image' /&gt;" Guid="4c101ac3-adcc-48ee-9100-980c4abbc62c" InformativeScreenshot="bae2c10c91fba933083d4b33b1e16ea1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File &amp;name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="HardwareEvents" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_InvoicePath]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="e0b08b7c-4063-4142-8b73-025468ecd1d9" CvElementArea="196, 404, 381, 26" CvType="InputBox" DesignTimeRectangle="201, 410, 354, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="45eaec74-27e7-4413-9a32-f8034088c2bc" InformativeScreenshot="e620eadccf46f35ce94c673350079e1b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="e0b08b7c-4063-4142-8b73-025468ecd1d9" CvTextArea="137, 410, 55, 12" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="138, 409, 54, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' check:text='File &amp;amp;name:' /&gt;" Guid="8bee93ac-cb5f-4f24-bcfd-7a9d0469056b" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="5c868d34-4bb5-4c3f-a6b5-84bb41f583a2" CvElementArea="587, 429, 89, 26" CvTextArea="615, 435, 30, 15" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="587, 429, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="1dd734ba-2137-48f6-bdd7-ca169244ab3b" InformativeScreenshot="94ad4543763033dc206f2e51531c914d.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="5c868d34-4bb5-4c3f-a6b5-84bb41f583a2" CvElementArea="687, 429, 88, 26" CvTextArea="712, 435, 37, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="687, 429, 88, 26" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='Cancel' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Cancel' check:text='Cancel' /&gt;" Guid="24f74cf8-e6d5-49b5-9724-c8b031913b0f" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[Index]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="1050,1415" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_ProductsOnInvoice]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1016,1269" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Product'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,286" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[currentText + &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="ada0f50c-1316-4404-9d1b-0ab307db2c27" CvElementArea="538, 1071, 403, 38" CvType="InputBox" DesignTimeRectangle="550, 1078, 339, 23" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='collapse0' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapse0' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="8e051161-04c6-4658-aaf4-67962506fb55" InformativeScreenshot="6cdca5643025e5264efbc28916605ec9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ada0f50c-1316-4404-9d1b-0ab307db2c27" CvTextArea="538, 1032, 80, 20" CvTextArgument="Product *" CvType="Text" DesignTimeRectangle="539, 1032, 79, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='collapse0' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='collapse0' tag='LABEL' type='' class='control-label' aaname='Product' check:innerText='Product' /&gt;" Guid="d4387d36-0136-4075-87ab-eab55d69f35d" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Serial Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,286" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_SerialNumberList(Index)]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="ada0f50c-1316-4404-9d1b-0ab307db2c27" CvElementArea="957, 1070, 226, 38" CvType="InputBox" DesignTimeRectangle="960, 1072, 221, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='SerialNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='SerialNumber' tag='INPUT' type='' class='form-control ng-untouched ng-pristine ng-valid ng-star-inserted' aaname='Serial Number' /&gt;" Guid="7f80b374-4524-47f5-88f4-4349dbd038c0" InformativeScreenshot="743cafc27791ef76a703dac984231b56.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ada0f50c-1316-4404-9d1b-0ab307db2c27" CvTextArea="959, 1036, 118, 16" CvTextArgument="Serial Number" CvType="Text" DesignTimeRectangle="960, 1034, 115, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Serial Number' parentid='collapse0' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Serial Number' parentid='collapse0' tag='LABEL' type='' class='control-label' check:innerText='Serial Number' /&gt;" Guid="920c6598-c28a-4195-abd1-c6be050ada08" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NCheckState DisplayName="Check App State 'This is required.'" sap:VirtualizedContainerService.HintSize="954,609" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,369" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Serial Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,279" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="8f13ed54-d569-4334-9339-f590c0a16972" CvElementArea="1072, 1081, 225, 38" CvType="InputBox" DesignTimeRectangle="1074, 1083, 221, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='SerialNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='SerialNumber' tag='INPUT' type='' class='form-control ng-valid ng-star-inserted ng-dirty ng-touched user-success' aaname='Serial Number' /&gt;" Guid="0c561566-91de-4339-b1d2-4693833be1c8" InformativeScreenshot="c82a1e9eeb1b436c949d79fd5f7eac64.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="8f13ed54-d569-4334-9339-f590c0a16972" CvTextArea="1073, 1047, 118, 16" CvTextArgument="Serial Number" CvType="Text" DesignTimeRectangle="1074, 1045, 115, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Serial Number' parentid='collapse0' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Serial Number' parentid='collapse0' tag='LABEL' type='' class='control-label' check:innerText='Serial Number' /&gt;" Guid="4014a632-7280-4b2c-ba5c-f4cc4baeac7e" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.Text>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </uix:NTypeInto.Text>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ADD A PRODUCT'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="7fa64c5d-256b-4905-b01e-e9485d37e814" CvElementArea="538, 1151, 164, 47" CvTextArea="557, 1168, 126, 15" CvTextArgument="ADD A PRODUCT" CvType="Button" DesignTimeRectangle="539, 1154, 162, 43" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' type='' class='btn btn-primary ng-tns-c58-2' aaname='ADD A PRODUCT' check:innerText='ADD A PRODUCT' /&gt;" Guid="f607ddd6-cb4c-4c95-bf17-fdb0b3fe1298" InformativeScreenshot="a8b66d9b403e70942defa94d8a80f14e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="13d4dfb6-b7d7-47e4-9652-47775a29e61a" CvTextArea="680, 1111, 120, 19" CvTextArgument="This is required." CvType="Text" DesignTimeRectangle="681, 1108, 402, 23" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='This is required.' parentid='collapse0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='This is required.' parentid='collapse0' tag='DIV' type='' class='help-block ng-star-inserted' check:innerText='This is required.' /&gt;" Guid="fcb90af9-cc06-4abf-9fc4-73881b42e564" InformativeScreenshot="f7991a668a93db6f969ece11928c60f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="13d4dfb6-b7d7-47e4-9652-47775a29e61a" CvElementArea="680, 1151, 165, 47" CvTextArea="699, 1167, 126, 16" CvTextArgument="ADD A PRODUCT" CvType="Button" DesignTimeRectangle="681, 1154, 163, 43" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' type='' class='btn btn-primary ng-tns-c58-2' aaname='ADD A PRODUCT' check:innerText='ADD A PRODUCT' /&gt;" Guid="80f8e20b-a44b-4333-a5e0-926c11fe3eb7" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <uix:NGetText DisplayName="Get Text 'INPUT SerialNumber'" sap:VirtualizedContainerService.HintSize="1050,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" TextString="[SerialNumberTemp]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="9727e897-bfe6-42c8-bbb5-7a24796f7043" CvElementArea="1042, 979, 225, 37" CvType="InputBox" DesignTimeRectangle="1044, 981, 221, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='SerialNumber' parentid='collapse1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='SerialNumber' parentid='collapse1' tag='INPUT' type='' class='form-control ng-untouched ng-pristine ng-valid ng-star-inserted' aaname='Serial Number' /&gt;" Guid="d8bc5f4d-9c2f-4514-be55-54e62b14574d" InformativeScreenshot="f097bdec8a3dcd38f84ca9dff9ec1ce7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="9727e897-bfe6-42c8-bbb5-7a24796f7043" CvElementArea="623, 1040, 162, 42" CvTextArea="640, 1054, 126, 14" CvTextArgument="ADD A PRODUCT" CvType="Button" DesignTimeRectangle="622, 1040, 163, 43" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' type='' class='btn btn-primary ng-tns-c58-10' aaname='ADD A PRODUCT' check:innerText='ADD A PRODUCT' /&gt;" Guid="7f28ce24-35a4-4b38-8342-261bb965ea01" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <If Condition="[SerialNumberTemp = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="1050,577" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Remove Product'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" DesignTimeRectangle="1184, 1158, 60, 53" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='removeProduct1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='removeProduct1' tag='A' type='' class='removeProductBtn btn btn-file ng-tns-c57-4' aaname='Remove Product' check:innerText='Remove Product' /&gt;" Guid="be8c0d23-e050-4557-a43c-aa93e7c7ae44" InformativeScreenshot="39c879beb5742f00411490f3571a234a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="db964605-6bb9-4127-b1a6-ad1b84d74f80" CvElementArea="522, 1231, 161, 41" CvTextArea="539, 1244, 126, 14" CvTextArgument="ADD A PRODUCT" CvType="Button" DesignTimeRectangle="521, 1230, 163, 43" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ClaimedProducts' tag='BUTTON' type='' class='btn btn-primary ng-tns-c58-2' aaname='ADD A PRODUCT' check:innerText='ADD A PRODUCT' /&gt;" Guid="e21de73a-2fe9-43ec-9f47-4e87bd4a3d3d" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Sale Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_SaleDate + &quot;[k(Enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="33b08bd5-0080-4293-bb2c-fec627b25051" CvTextArea="814, 1116, 83, 17" CvTextArgument="mm/dd/yyyy" CvType="Text" DesignTimeRectangle="802, 1106, 341, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='InvoiceDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='InvoiceDate' tag='INPUT' type='text' class='form-control datePicker ng-untouched ng-pristine ng-invalid ng-star-inserted' placeholder='mm/dd/yyyy' aaname='Sale Date' /&gt;" Guid="83beb97a-0706-4ca7-9f02-258d1be41c52" InformativeScreenshot="377f5ab149d667300a08e8a8a97bd709.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="33b08bd5-0080-4293-bb2c-fec627b25051" CvTextArea="800, 1065, 93, 21" CvTextArgument="Sale Date *" CvType="Text" DesignTimeRectangle="802, 1066, 91, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Sale Date' parentid='BasicInfo' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sale Date' parentid='BasicInfo' tag='LABEL' type='' class='control-label' check:innerText='Sale Date' /&gt;" Guid="441485a9-4e92-4653-a8fc-846ffb0c3066" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Install Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_InstallDate + &quot;[k(Enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="a2de5fb3-7502-4982-a5f2-38afdf9d8062" CvTextArea="1045, 982, 83, 17" CvTextArgument="mm/dd/yyyy" CvType="Text" DesignTimeRectangle="1034, 973, 341, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='InstallDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='InstallDate' tag='INPUT' type='text' class='form-control datePicker ng-untouched ng-pristine ng-invalid ng-star-inserted' placeholder='mm/dd/yyyy' aaname='Install Date' /&gt;" Guid="f59016bd-ca2b-46b9-a2c7-deca5973c213" InformativeScreenshot="d452e650fa27dcece8742330a0e6b6d9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="a2de5fb3-7502-4982-a5f2-38afdf9d8062" CvTextArea="1033, 932, 110, 20" CvTextArgument="Install Date *" CvType="Text" DesignTimeRectangle="1034, 932, 108, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Install Date' class='control-label' parentid='BasicInfo' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Install Date' class='control-label' parentid='BasicInfo' tag='LABEL' type='' check:innerText='Install Date' /&gt;" Guid="52c5ef07-828a-45ea-a98e-34dfd40204e2" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="37d2bf32-602a-4d3c-85ea-3850c2447347" CvElementArea="1162, 1199, 78, 45" CvTextArea="1181, 1214, 39, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1163, 1200, 76, 43" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='form' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='BUTTON' type='button' class='btn btn-primary pull-right ng-star-inserted' aaname=' Next ' check:innerText='Next' /&gt;" Guid="612ca184-64d6-421c-971c-a471653fff0a" InformativeScreenshot="3a30f19aefd1bacb72ffaa15e7f34cee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="37d2bf32-602a-4d3c-85ea-3850c2447347" CvElementArea="1066, 1199, 92, 45" CvTextArea="1086, 1213, 51, 15" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1067, 1200, 90, 43" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='button' class='btn btn-default pull-left ng-star-inserted' aaname=' Cancel ' check:innerText='Cancel' /&gt;" Guid="1b70a649-6698-46db-aa14-6358d0b29b06" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <If Condition="[in_FirstName.Contains(&quot; &quot;)]" sap:VirtualizedContainerService.HintSize="1050,556" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[FirstNameShortened]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Split(in_FirstName, " ")(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[FirstNameShortened]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_FirstName]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Homeowner First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[FirstNameShortened]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvElementArea="801, 967, 336, 38" CvType="InputBox" DesignTimeRectangle="803, 969, 332, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='HomeOwnerFirstName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='HomeOwnerFirstName' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted' aaname='Homeowner First Name' /&gt;" Guid="761eac37-f1fd-43dd-92b7-9d552fe10d52" InformativeScreenshot="c04fefa43d36ea56a4494dbf02ffe18f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvTextArea="803, 929, 207, 20" CvTextArgument="Homeowner First Name *" CvType="Text" DesignTimeRectangle="803, 929, 206, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='Homeowner First Name' check:innerText='Homeowner First Name' /&gt;" Guid="67c1deab-5353-404a-9f29-9e8ab0810c4f" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Homeowner Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_LastName]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvElementArea="1153, 967, 335, 38" CvType="InputBox" DesignTimeRectangle="1155, 969, 331, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='HomeOwnerLastName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='HomeOwnerLastName' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted' aaname='Homeowner Last Name' /&gt;" Guid="74ca6548-200b-4b34-b9ec-07d4c2240257" InformativeScreenshot="3b768c73201b81db4342828903db098c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvTextArea="1154, 929, 205, 20" CvTextArgument="Homeowner Last Name *" CvType="Text" DesignTimeRectangle="1155, 929, 203, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Homeowner Last Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Homeowner Last Name' tag='LABEL' type='' class='control-label' check:innerText='Homeowner Last Name' /&gt;" Guid="22745792-0c1a-4d97-89e8-8e16de4412d9" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Street Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_Street]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvElementArea="800, 1056, 688, 37" CvType="InputBox" DesignTimeRectangle="803, 1058, 683, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='HomeOwnerStreetAddressFirstLine' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='HomeOwnerStreetAddressFirstLine' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted' placeholder='Address Line 1' aaname='Street Address' /&gt;" Guid="d652d82e-12d3-4758-9718-1caa0ee48515" InformativeScreenshot="a94f6dd4d6e133f93dd9cf273fd7a02e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvTextArea="802, 1017, 135, 21" CvTextArgument="Street Address *" CvType="Text" DesignTimeRectangle="803, 1018, 133, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Street Address' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Street Address' tag='LABEL' type='' class='control-label' check:innerText='Street Address' /&gt;" Guid="942bebe7-36fd-40f5-b72f-0d1a584c839b" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_City]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvElementArea="801, 1227, 218, 38" CvType="InputBox" DesignTimeRectangle="803, 1229, 214, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='City' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='City' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid ng-star-inserted' aaname='City' /&gt;" Guid="1ae17550-8143-4128-a1a1-30684a4875fc" InformativeScreenshot="9e968d81d27f877e337d1d1e7371f5e8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvTextArea="803, 1188, 48, 25" CvTextArgument="City *" CvType="Text" DesignTimeRectangle="803, 1189, 47, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='City' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='City' tag='LABEL' type='' class='control-label' check:innerText='City' /&gt;" Guid="cdc704e2-8f49-4493-89ae-53070ecdb9d8" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NSelectItem DisplayName="Select Item 'State/Province'" sap:VirtualizedContainerService.HintSize="1050,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_State]" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>AB</x:String>
+                  <x:String>AK</x:String>
+                  <x:String>AL</x:String>
+                  <x:String>AR</x:String>
+                  <x:String>AZ</x:String>
+                  <x:String>BC</x:String>
+                  <x:String>CA</x:String>
+                  <x:String>CO</x:String>
+                  <x:String>CT</x:String>
+                  <x:String>DC</x:String>
+                  <x:String>DE</x:String>
+                  <x:String>FL</x:String>
+                  <x:String>GA</x:String>
+                  <x:String>HI</x:String>
+                  <x:String>IA</x:String>
+                  <x:String>ID</x:String>
+                  <x:String>IL</x:String>
+                  <x:String>IN</x:String>
+                  <x:String>KS</x:String>
+                  <x:String>KY</x:String>
+                  <x:String>LA</x:String>
+                  <x:String>MA</x:String>
+                  <x:String>MB</x:String>
+                  <x:String>MD</x:String>
+                  <x:String>ME</x:String>
+                  <x:String>MI</x:String>
+                  <x:String>MN</x:String>
+                  <x:String>MO</x:String>
+                  <x:String>MS</x:String>
+                  <x:String>MT</x:String>
+                  <x:String>NB</x:String>
+                  <x:String>NC</x:String>
+                  <x:String>ND</x:String>
+                  <x:String>NE</x:String>
+                  <x:String>NH</x:String>
+                  <x:String>NJ</x:String>
+                  <x:String>NL</x:String>
+                  <x:String>NM</x:String>
+                  <x:String>NS</x:String>
+                  <x:String>NT</x:String>
+                  <x:String>NU</x:String>
+                  <x:String>NV</x:String>
+                  <x:String>NY</x:String>
+                  <x:String>OH</x:String>
+                  <x:String>OK</x:String>
+                  <x:String>ON</x:String>
+                  <x:String>OR</x:String>
+                  <x:String>PA</x:String>
+                  <x:String>PE</x:String>
+                  <x:String>QC</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="dd890f21-c293-4977-bb5b-d7f5a9d6afcc" CvElementArea="897, 1199, 218, 38" CvType="InputBox" DesignTimeRectangle="899, 1206, 213, 23" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' type='' class='ng-input' aaname='' /&gt;" Guid="0a71657a-9311-46a9-9191-2333da4ca5f4" InformativeScreenshot="0b191d598a287532bd03f69db66f43c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="dd890f21-c293-4977-bb5b-d7f5a9d6afcc" CvTextArea="897, 1160, 136, 20" CvTextArgument="State/Province *" CvType="Text" DesignTimeRectangle="898, 1160, 134, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='State/Province' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='State/Province' tag='LABEL' type='' class='control-label' check:innerText='State/Province' /&gt;" Guid="f697b9b4-2f8e-40e9-8b4b-a60ea4f381c1" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zip/Postal Code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1050,286" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Text="[in_PostalCode]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvElementArea="1270, 1227, 217, 37" CvType="InputBox" DesignTimeRectangle="1272, 1229, 214, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='ZipCode' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZipCode' tag='INPUT' type='text' class='form-control ng-touched ng-pristine ng-invalid ng-star-inserted' aaname='Zip/Postal Code' /&gt;" Guid="27017e3b-fbee-45a5-ac4e-4102f526b0ea" InformativeScreenshot="8a5e9fa298e1a3d322ca962b09aeb721.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="cea5746e-28c3-4f47-9d85-fa4be00546f0" CvTextArea="1269, 1188, 144, 25" CvTextArgument="Zip/Postal Code *" CvType="Text" DesignTimeRectangle="1272, 1189, 140, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Zip/Postal Code' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zip/Postal Code' tag='LABEL' type='' class='control-label' check:innerText='Zip/Postal Code' /&gt;" Guid="4464c9a6-b07b-4a49-9a57-311e78bb1175" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="938c0da9-e8a2-42ba-a90e-8337ebc0d305" CvElementArea="1161, 1381, 78, 46" CvTextArea="1181, 1396, 38, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1162, 1382, 76, 44" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' Next ' parentid='form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Next ' parentid='form' tag='BUTTON' type='button' class='btn btn-primary pull-right ng-star-inserted' check:innerText='Next' /&gt;" Guid="9cbc9940-0258-4429-b4f6-9b96965d1793" InformativeScreenshot="1a63d8c38a7d817bff0db182c064aab2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Verify Address'" sap:VirtualizedContainerService.HintSize="1050,557" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Choose'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="38e46b72-4b92-4f76-81d8-bfd67041a7a0" CvElementArea="1038, 246, 96, 46" CvTextArea="1057, 261, 58, 15" CvTextArgument="Choose" CvType="Button" DesignTimeRectangle="1039, 248, 94, 43" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Choose' parentid='form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Choose' parentid='form' tag='BUTTON' type='button' class='btn btn-primary ng-tns-c53-6' check:innerText='Choose' /&gt;" Guid="6f39400f-c40d-4813-a502-3d3c9922b8c5" InformativeScreenshot="ff8c0948d1cad60bed3134435fbcce55.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="38e46b72-4b92-4f76-81d8-bfd67041a7a0" CvTextArea="619, 197, 97, 16" CvTextArgument="You Entered:" CvType="Text" DesignTimeRectangle="621, 195, 558, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='form' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='P' type='' class='text-info ng-tns-c53-6' aaname='You Entered:' check:innerText='You Entered:' /&gt;" Guid="b9c90f80-0076-4cde-88ef-5ff720163f17" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="38e46b72-4b92-4f76-81d8-bfd67041a7a0" CvElementArea="1167, 131, 20, 19" CvTextArea="613, 138, 119, 19" CvTextArgument="Verify Address" CvType="CloseButton" DesignTimeRectangle="616, 133, 568, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='form' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='H4' type='' class='modal-title ng-tns-c53-6' aaname='Verify Address' check:innerText='Verify Address' /&gt;" Guid="af035058-665a-4c37-952c-d19334784f74" InformativeScreenshot="bdd8d9e3003d5f2b5a87c9b27caf1b5e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="938c0da9-e8a2-42ba-a90e-8337ebc0d305" CvElementArea="1161, 1381, 78, 46" CvTextArea="1181, 1396, 38, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1162, 1382, 76, 44" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' Next ' parentid='form' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Next ' parentid='form' tag='BUTTON' type='button' class='btn btn-primary pull-right ng-star-inserted' check:innerText='Next' /&gt;" Guid="9cbc9940-0258-4429-b4f6-9b96965d1793" InformativeScreenshot="1a63d8c38a7d817bff0db182c064aab2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="1050,225" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="e1826d00-4675-498a-b11d-202e421367d8" CvElementArea="1161, 1179, 95, 46" CvTextArea="1180, 1193, 56, 15" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="1162, 1180, 93, 43" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Submit' parentid='form' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Submit' parentid='form' tag='BUTTON' type='button' class='btn btn-primary pull-right ng-star-inserted' check:innerText='Submit' /&gt;" Guid="117ac685-b226-458f-99bd-82efe08f413c" InformativeScreenshot="1567bf59fc739b3c83c46b6399d9e887.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="e1826d00-4675-498a-b11d-202e421367d8" CvElementArea="1161, 1179, 95, 46" CvTextArea="1180, 1193, 56, 15" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="1182, 1191, 53, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='form' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='SPAN' type='' class='ng-star-inserted' aaname='Submit' check:innerText='Submit' /&gt;" Guid="80d51570-0aa3-4935-b2f9-81336b05b307" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Claim submitted'" sap:VirtualizedContainerService.HintSize="1050,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9d384634-a518-4f60-ba6b-b504c04b3efb" TextString="[out_ClaimSubmissionNumber]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.mylennoxspif.com/ClaimEntry" CVScreenId="c7b7d843-aa93-43bf-8da4-8359a2646577" CvTextArea="852, 507, 303, 17" CvType="AnyWordGroup" DesignTimeRectangle="852, 507, 303, 17" DesignTimeScaleFactor="1" ElementType="Text" Guid="80476240-b97d-4674-ac9e-3d7af435f38e" InformativeScreenshot="f2a52c7667e07d301d67741f8f4b5842.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="c7b7d843-aa93-43bf-8da4-8359a2646577" CvTextArea="750, 450, 507, 37" CvTextArgument="Claim submitted successfully" CvType="Text" DesignTimeRectangle="672, 445, 663, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='Confirmation' tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='Confirmation' tag='H1' type='' class='text-center ng-tns-c70-10' aaname='Claim submitted successfully' check:innerText='Claim submitted successfully' /&gt;" Guid="f22655b8-eac8-4dbb-9024-6e13096c5042" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign sap:VirtualizedContainerService.HintSize="1050,107" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_ClaimSubmissionNumber]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[out_ClaimSubmissionNumber.Substring(18)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACi9JREFUWEddVwtwlNUZ/aNtKZDaggMJDwVCdoE8IIUECI8kPBLk/ZAIAuIDsaMgbdXp0PHtjNZ2ptYUcHCqglgFW0ZrxSoYDRDY3f+12Q1JUPKUsCQhZHlkQ17I6fnuvwvozpz57r25e8/5zvfdm0S7+VNZ+EL8yfu3Fpxcv3VbxeqnApWFT4QrV/wuUrFsS0Ri5conIuXr/hA58fCzxDORioefI55V8cQGmXN9w9POzzZyjbFy43Ph8oeeDpQ/uHXbCZ5dWfhYfJTuB5+4qjVPjvhm3dbXK5ZvCfnz7oc1qRC+cQvhG0O4F0Ifswg6o9c9H3pmIfSc9fBOvxcGo8H93plr4eNYz7mP8wfUmoy9OetgzH0I/iWbEFj1ZChwz++L/Cs2jRBOh5ofWahc9dT+4LyN3XraUvhG3wU9iWCUsTdpHoxkikheAF9SASPXJyyHb+pq6NPWKPiyVxP3OvPpa6HPWMfIdY692avg47oIsxc80m0vfnS/f/YGEUHb8x6Lr1i2eVswf2OPOXaJIjXdi2C4mDmJhMxwLVBzgcx1CrIoILDgUQRW/BZlyzbDv3QT/MuY5dLH4ZshxGtgiiMiZAadmEZx0zmeuQ5W/oYec/b920ryCuO1qnmPzg0WbAxZ6ctJTnuT5zNbgnarSChSRu9oyZ5z13w07foIXU2t6GppQ1fz+Shace7Tr2HSfmPGWiXAYGkMlkLn3BGzFtbsB2Hkrg8VZy7P18rmPLDdP2XNNTlYMhYY7gV0gdkyc5NwiKM/Y2nK5zyMztNN+P7773H16lUFGfd2dqHmL29BZzmE1MplL0hP5FKIRBEyeRWM8ctxLHn+tf1Dp2/XynPXB8zxy6I2O8QWG8+kCOWGOKGEONE3Yi7q/liE3o5O9Pb0ore7R+Fqby8uNjTCt/wxWMzUpgs2a24xmhRgTWXDjmVp75wLY+hseIbmYV/ClKAWmLo2bKUs4eEkIyzWX3rAGrNYOaHWeAOUIyKIh7R+Xoqenh50M+PuK51EF3q6u1G771N4WGtr5n2K3GS9/SIi424YFK6T1Bw+BxbhHZaHDxOzw1ogc3WHKQQqS8cFW4lYCJtNKU445LwJbL4TBY+gvbYRVzqu4Ep7xEGkA+3n22Btfh4mM7VzeY1pt80esDNWwhg2GyZhDJ8NncQyFgf2Jkzu0OyJKyMWsxISydYpgTjglEFEqHXOjZEFaHhpJ9ovXUb7hUvX0dHejiajDJ6slbCzVpGcJaDtdsYKlbEIEHLrjjmcMw6fC6+UIHFyRCubWBhRNrPGAlNsFif44AhiDog7VvoyNB86jksXL+HCufO42BrGxfNhXL7cjsqiXeq9kGTs7DVKiMl6C6H/znxFbkvkmoydEkyJaP6xiyImm8IaMgtGYh70xFwqzIfOTcbIfJh8FywRwMinGOH6RoRbzqOt6RzCzQJePTafXvi42mOzd2S/kKl68xwnc4lswOGzlCg5Xwmwk+dHrMRZ0BNyiFwYjAIzIc+JQxhpl8UD6159G60trWg504SWxrM4R7Q2taDu4BF4Jiwl+SKUjVsKk4mYA6bzDEkmljmTGjZLiRAxImBfAkvgT74rYg+hAxRhJzpRHzxDRYMHiBBzcC4oFGe+9KCZpE11p9FcTzDzlsYQAs//jQ1awH5h9nLNBkyDPiAbxsBsmLfzLJ4hDtusvcXsTY59A6djX990OuC6K6KypPVSAtmoMpAxRcjcun0myhdvQuhkNUK1DThTXYdQTT3OcPxdeRU88x7izaHtfKQU4cAZjgMUYg2Q8TSYJDR+RVF9J0G/NQOeuDR8oLnogHtBxBrqENkCRSoCmL30gwgZlItTL7+JxpoGNH5bQ9Ti9Dc1OF1Th6q9n0BPW4IyXl2bTilSkpkDpyknTIoRQUa/LPhuSYeupSl4tfF4XwQEXAsjptgvmQq5KkMe/CyLiDEH58A/bgnqPj+C+spvUX/iG9RXCE6i4eQpmFtehMXm87O2Np0SMktciEIfMBVmn0zocenwKWIRkA4P4QhwL6QDzi2w6YSUwz+UHcu5jO1BOai850nU+ytQG6xCbVklajmu4/jbEg+OZ90NSzIXi5m1kEr2Ikai3mciDJIJsUN+Q8AHmpslcM1nEzp1Vy6IgCGOAHHA5vjUX3ejjlnXWOWotoKoscspphKBv7+DY4OzofebBDN+smN/tAekDDrrLeRCKOTiwA0BaY4DQffiiFN/Phg3Za7W2L2BjEJUHzyKapKe4mtXIwKIajsI76ot8PbJYH0zYfafDCt+CsxfZpN8piL3stFiAoTcEeCMj2up2CsOBFkC+3oJHBESHfvzUPXgM6jRy3DK50e1zyb8qDEDOPlZMUrdFNzXITf7ObA4Nn4umY+/Xu8YccwFgdMDyc4t8A8jqXJhFgWw+ZQgluKOfFQX7UEtBVQfNVBzVEdNqYFaIwD/C6/D03+iIpcOVyJk3GcSfKrh0pWImwWY0bngGB34p5YkAvgS8peFuoqEcoGCrMF5KJ+yBt8dOIyGIwYaDutoKBEYqC/xwjvvAfhov9k/SwkwJJJcjxtPwtTrRF6OHTE3yiAQAaoE9h1zOuwEuX6889Ey2CyDye6v/s1LaCq1ECr24uxXOpq+Jg7TiT0fo3TITBLSAcme0H/2a2YuZEKQqoil4WLZC0SIU4ZU9kAaBbg6NLNvVthzKzf8NAOW1PE23lu+WOawHJx940OES/1oI3EbM2/72kD4iI2KJ16B5/YsWLfxZfsFbe/PzPtnwNuPFjMahO8WIXKyllLEhMSEfaWNYwmSw5o3Lj0YaxaPluJsjEtBMGMJLn1xHJdJfJnZXyZ5e4mJS8U+tLzzMZr+vAtNr76Ds6+8jbMv/wOhl95E6MWdXHsbpzf/iaXJJFmKInOyj8VUCkrD/yhgt5YU1A5p47Z/qaVcu2EPN/4kBQ0bX0DX8QCukLjzsIUrh22CkSI6j/rRSWe6vOXo8gQZCe7t8p1At1mF01tfg6fPOJWtnCeIuSCQK7hfc1+jgO3ae9qo/L1acqgkao1ssGhr82t70PbFEbTyz+zzROt/v8K5AyUqtn5SjNb/FKs/wWNz2SNo/vgQ/2FZyTfghoBY/SVKMx5U9rtC72mufG2HNih+tzZ62z7N1VMaFWHcMgEHB2ViR+IYFCW48AaxPcGtsJPYEV2TGIPMdw52461BY1BMBy1tQpT4ZuvHs/Yp8gT3vKslbxNu9d/R+9qoEbRj/780V3dxtA8Oa2NYp9H4VBuFz7QkjpPV/HPCmSdFx/LzUWqf/PwQ98n3Y9fOsT6V/ZXKzIXc1b1HS94vnIo8+onbpY0cuVsbVfQey/GR5sYBCijhF+SLTm8477eXUaDzYJk7az+Mx/g9gVw1Ke0BbSz+rblouzu0R3MVCZdwOtQ3fZxyjCrYxeZ4VxsdpJgL8htLHgx5NuUPCAGvD+cutR5bE8ieH+/do42+IN3OrLfL2ddtVx9N+z8+XipF5FsMqAAAAABJRU5ErkJggg==" InformativeScreenshot="3e2daf896399767f9a74c21f551350fb.jpg" Selector="&lt;html app='chrome.exe' title='Lennox SPIF' /&gt;" Title="Lennox SPIF" Url="https://www.mylennoxspif.com/Home" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1146,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finished SPIFRebate_Lennox&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,415 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test1" this:Test1.in_SerialNumber="5824G08111" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SerialNumber" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,4240</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Test1_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test1" sap:VirtualizedContainerService.HintSize="830,4175" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="5824G06031" Name="in_SerialNumber" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Name="strTxt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DtSerialNumber" />
+      <Variable x:TypeArguments="x:String" Name="JobStatus" />
+      <Variable x:TypeArguments="x:String" Name="TestString" />
+      <Variable x:TypeArguments="x:String" Name="TestString2" />
+      <Variable x:TypeArguments="x:String" Name="in_EquipmentDate" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="in_SerialNumberList" />
+      <Variable x:TypeArguments="x:Int32" Name="IndexNine" />
+      <Variable x:TypeArguments="x:String" Name="SampleAmpleString" />
+      <Variable x:TypeArguments="x:String" Name="TEST123" />
+      <Variable x:TypeArguments="x:String" Name="STString" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ServiceTitan" sap:VirtualizedContainerService.HintSize="768,519" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="68157be1-c007-4cae-ab62-6f9e4142f106" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Actual Replacement Date'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="68157be1-c007-4cae-ab62-6f9e4142f106" TextString="[STString]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Location/Equipment/Edit/596018173" CVScreenId="f235fc4d-5fbd-4063-ac28-8814ee61772c" CvTextArea="819, 661, 77, 16" CvType="AnyWordGroup" DesignTimeRectangle="782, 649, 303, 37" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='ActualReplacementDate' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='ActualReplacementDate' tag='INPUT' type='text' class='date' placeholder='M/D/YYYY' aaname='' /&gt;" Guid="1607ca28-6edd-456d-a200-c26153ceb6b4" InformativeScreenshot="f8ffb108113941c83878f0c940423a70.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="f235fc4d-5fbd-4063-ac28-8814ee61772c" CvTextArea="575, 660, 182, 15" CvTextArgument="Actual Replacement Date" CvType="Text" DesignTimeRectangle="557, 649, 200, 31" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Actual Replacement Date' class='control-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Actual Replacement Date' class='control-label' tag='LABEL' type='' check:innerText='Actual Replacement Date' /&gt;" Guid="0619561e-e81e-4538-a407-a987b38640e6" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPxSURBVFhHvZZbiJVVFMfHlEhHMcSewktKiCESeXnQDETNtCKwl6xpzEg9gyQzCoY3grw9RCHqg/rQBSOjG0oQ0U1LXyoxMiKth5QoREXIe5Ta77dZezhzzly+cxz6w4+z99prrb3P/vZe39dwM2outQ6BObAEtsPO4EWYB0PCtfdE0gGwGA7BDTgNX0Oe/DM4C479C7thbITfnEj0BDihbIDxMZREf0A0ba8CFyFbwlyfTAzvwlV4yX4MtQvbQrg32lPARTr5zuRQr0jg5G7xSUgTVAr7SDgb7RHwJzj5e8mhXi0otd5KEif/Fu4Mc5UYexkOR/sTcPIz0Jgc6hUJXoUTMDRMnYrxH+AwTIP83NfFcH0iwWy4BKPC1C5s7sxEmACT4Tr8Bq9DXsCScK9dBPvcj8PTYdI2FDbCMciTdMf2CK1dBLfB59G1Pxcugv90LyyD6eAOuBOzoHIB+td+/wkaBBaSe6LvRNfA5zwmOXUixlqhchGen9HhUkwErIAPot0Iv4PJuvw3jA2HNXAKfgWr33owrngRwtlnbwGZHf2lYJJryaFC2O+HT+ELcEIXYZk2T/mOpN3sUWVBfaJvDUhJkkOouWVZX2xb4GPwHLwGb8CDMB6eAm+QsfsirHvhmP99moxftz//A5mVHBHtzbA72svB0tsM34G+P8ev+IKqKt1Vwslrdi6C3Frvd04iH4Wrvj/C9GjfBhYgJ/K1vCnsj0N+H7ytrUfhOD8CPL3vRLucReG3FUxuXfCZe1aGpSQh+i4qP8LzYe5ZOG+KoIzv9IfB5/oXLAw/+x+CJdgX1WTt85e29aHdAt+D8QfAmjDD8ULCuQRXwAR/L2hp6xf2x8J2R3IM0XcXnoO7bWtrWtzqQf0KfJF5Ld9KzkVFwH3gnXbClWHW/iU8EN0k+k+Cn2RjYTVYF7bBN3AerJbmSbtUWATkb4HLMC1sPtvnk0OIvhN6JvpDhztP38PpotxVz9a4GComAlzEL+C9Tv+c3+FpsEzYrAlVr2Bs48DFuRvuguehww72KAJeiOBLTaX0bBub41xkYfNLyFK8PEztwnY7GG99eDbMxUXQ1Eggg2ERrInhdmG7C7wVP8FaeAY8oJbro1CsJFeKQA9k+QIsWhfgFehwI5pKbbdg2wHZ3+c+M4aLi6D+0bSdC1RaQNisDdnm1vrPj4DfDNnuuak6L4VEoC+ZPeAW+i2Qkw4MF33eL7N3hv9+UrjXLoLXlSWTDiWVvosrH++KbRFSuwj23ltkdsEjYU6ib6XrbMJKDkZI74mkj8J++Ccm6Y5ShPW+SG71ewj8QPkDKid/M1z/HzHhDPDryBuQvg26VkPDfz8CQZizRA+4AAAAAElFTkSuQmCC" InformativeScreenshot="41cc709e211e8f2f3461459c91ff926b.jpg" Selector="&lt;html app='chrome.exe' title='ServiceTitan' /&gt;" Title="ServiceTitan" Url="https://go.servicetitan.com/#/Location/Equipment/Edit/596018173" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign sap:VirtualizedContainerService.HintSize="768,114" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">[in_SerialNumberList]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {"3024C09836", "BT24C09836"}]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Location - ServiceTitan" sap:VirtualizedContainerService.HintSize="768,1717" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="a4dc3ee0-2cbb-4341-8d98-66e4703d7ac5" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="734,1468" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NForEachUiElement DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="672,1380" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="a4dc3ee0-2cbb-4341-8d98-66e4703d7ac5" Version="V3">
+              <uix:NForEachUiElement.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,1090" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="546,1000" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_SerialNumberList]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,861" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[currentText = CurrentElement_Label]" sap:VirtualizedContainerService.HintSize="450,773" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,509" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="354,205" sap2010:WorkflowViewState.IdRef="NClick_3" InUiElement="[CurrentElement]" KeyModifiers="None" MouseButton="Left" Version="V3">
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4dc3ee0-2cbb-4341-8d98-66e4703d7ac5" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/Location/Equipment/View/596018173" CVScreenId="eb16abf1-d933-4cad-a190-264cefc99c1c" CvElementArea="1704, 264, 32, 31" CvType="Icon" DesignTimeRectangle="1711, 267, 21, 25" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='icon-pencil' parentid='page' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl class='icon-pencil' parentid='page' tag='I' type='' aaname='' /&gt;" Guid="bf3e49f4-64c2-4d9b-b3fd-efaeede4b897" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABkAAAAdCAYAAABfeMd1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVEhL7dU9i4MwGMDx+/7fQAgECgGhcCAcOBQEodDpJkHIIHQKHDgFCg7Ccz4xaqLxJVq3Dn8EY54fxsGvuq7h7D7IUFXCM+cgXo413TFEZhCRAIIAY5AKxzNN+xELWIZ2IgLSyxjomkL+iCwgL+TMm3TZkB/SD2ZwW4N+8n7fdsQcSEhzXYbCR9nv3YYYg0iUQXEPgahhbugSc5DG/nVkDDyuGuiyoTGALSOrQJeGqgoqx5x5ZDPQxpInvFxzmtyIL3ArJkdkNkXeDGA2cgKADYgBBOEd+JsArEUMgF2Xh2M+AKYQkbJ2cyLUzfL3exbyBTALibJhwQXtATALCQgFSmPgerE0vsteALMRVQQZLkoOsf5nHAEwB2J3FMAU8tccC6V4VHZhchzAFHJ2H8SjGv4BiVFeOMlInGAAAAAASUVORK5CYII=" InformativeScreenshot="af290e6a739bc49ab3d69ab99ce9ef90.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NForEachUiElement.Body>
+              <uix:NForEachUiElement.Target>
+                <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/595618871" DesignTimeRectangle="368, 796, 3287, 288" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='k-grid-table' parentid='equipment-table' tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="780ba7f3-af54-4dc2-8215-3bc8ca49e1d5" InformativeScreenshot="743567666b87380bfd82abc664fc89e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Location - ServiceTitan' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NForEachUiElement.Target>
+              <uix:NForEachUiElement.Variables>
+                <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+              </uix:NForEachUiElement.Variables>
+              <uix:NForEachUiElement.VariablesMetadata>
+                <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                  <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                  <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                </scg:List>
+              </uix:NForEachUiElement.VariablesMetadata>
+            </uix:NForEachUiElement>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-7, 0, 2306, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPxSURBVFhHvZZbiJVVFMfHlEhHMcSewktKiCESeXnQDETNtCKwl6xpzEg9gyQzCoY3grw9RCHqg/rQBSOjG0oQ0U1LXyoxMiKth5QoREXIe5Ta77dZezhzzly+cxz6w4+z99prrb3P/vZe39dwM2outQ6BObAEtsPO4EWYB0PCtfdE0gGwGA7BDTgNX0Oe/DM4C479C7thbITfnEj0BDihbIDxMZREf0A0ba8CFyFbwlyfTAzvwlV4yX4MtQvbQrg32lPARTr5zuRQr0jg5G7xSUgTVAr7SDgb7RHwJzj5e8mhXi0otd5KEif/Fu4Mc5UYexkOR/sTcPIz0Jgc6hUJXoUTMDRMnYrxH+AwTIP83NfFcH0iwWy4BKPC1C5s7sxEmACT4Tr8Bq9DXsCScK9dBPvcj8PTYdI2FDbCMciTdMf2CK1dBLfB59G1Pxcugv90LyyD6eAOuBOzoHIB+td+/wkaBBaSe6LvRNfA5zwmOXUixlqhchGen9HhUkwErIAPot0Iv4PJuvw3jA2HNXAKfgWr33owrngRwtlnbwGZHf2lYJJryaFC2O+HT+ELcEIXYZk2T/mOpN3sUWVBfaJvDUhJkkOouWVZX2xb4GPwHLwGb8CDMB6eAm+QsfsirHvhmP99moxftz//A5mVHBHtzbA72svB0tsM34G+P8ev+IKqKt1Vwslrdi6C3Frvd04iH4Wrvj/C9GjfBhYgJ/K1vCnsj0N+H7ytrUfhOD8CPL3vRLucReG3FUxuXfCZe1aGpSQh+i4qP8LzYe5ZOG+KoIzv9IfB5/oXLAw/+x+CJdgX1WTt85e29aHdAt+D8QfAmjDD8ULCuQRXwAR/L2hp6xf2x8J2R3IM0XcXnoO7bWtrWtzqQf0KfJF5Ld9KzkVFwH3gnXbClWHW/iU8EN0k+k+Cn2RjYTVYF7bBN3AerJbmSbtUWATkb4HLMC1sPtvnk0OIvhN6JvpDhztP38PpotxVz9a4GComAlzEL+C9Tv+c3+FpsEzYrAlVr2Bs48DFuRvuguehww72KAJeiOBLTaX0bBub41xkYfNLyFK8PEztwnY7GG99eDbMxUXQ1Eggg2ERrInhdmG7C7wVP8FaeAY8oJbro1CsJFeKQA9k+QIsWhfgFehwI5pKbbdg2wHZ3+c+M4aLi6D+0bSdC1RaQNisDdnm1vrPj4DfDNnuuak6L4VEoC+ZPeAW+i2Qkw4MF33eL7N3hv9+UrjXLoLXlSWTDiWVvosrH++KbRFSuwj23ltkdsEjYU6ib6XrbMJKDkZI74mkj8J++Ccm6Y5ShPW+SG71ewj8QPkDKid/M1z/HzHhDPDryBuQvg26VkPDfz8CQZizRA+4AAAAAElFTkSuQmCC" InformativeScreenshot="7cfd03cdfef8782b40ba06e975566eae.jpg" Selector="&lt;html app='chrome.exe' title='Location - ServiceTitan' /&gt;" Title="Location - ServiceTitan" Url="https://go.servicetitan.com/#/location/595618871" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:MultipleAssign DisplayName="TEST VALS DELETE" sap:VirtualizedContainerService.HintSize="768,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[in_EquipmentDate]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">10/10/2024</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[in_SerialNumberList]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {"5824H06860", "1624F18485", "3022M12138"}]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Lennox Residential Product Warranty Registration | Lennox Warranty Your Way" sap:VirtualizedContainerService.HintSize="768,1394" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="20ef3592-a21b-4243-bc90-6fa722fcd4d8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="450,1015" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_SerialNumberList]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,876" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Serial Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="20ef3592-a21b-4243-bc90-6fa722fcd4d8" Text="[CurrentText + &quot;[k(Tab)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/equipment/" CVScreenId="ef3d84df-f332-42fc-9543-9cabec67827a" CvElementArea="850, 382, 189, 31" CvType="InputBox" DesignTimeRectangle="851, 384, 186, 28" DesignTimeScaleFactor="0.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='serialNumber' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='serialNumber' tag='INPUT' type='text' class='form-control' aaname='Serial Number' /&gt;" Guid="53fce270-7fc9-4314-8813-184107bdb771" InformativeScreenshot="d3efed4ef6a7cdf0b2e51bb79bd6ded7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ef3d84df-f332-42fc-9543-9cabec67827a" CvTextArea="849, 368, 89, 12" CvTextArgument="Serial Number" CvType="Text" DesignTimeRectangle="851, 366, 86, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-weight-bolder mb-0' aaname='Serial Number' check:innerText='Serial Number' /&gt;" Guid="071b4dec-6302-4791-8113-516fc4f7b2cc" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Installation Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="20ef3592-a21b-4243-bc90-6fa722fcd4d8" Text="[in_EquipmentDate + &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/equipment/" CVScreenId="ef3d84df-f332-42fc-9543-9cabec67827a" CvTextArea="1261, 392, 72, 15" CvTextArgument="mm/dd/yyyy" CvType="Text" DesignTimeRectangle="1252, 384, 186, 28" DesignTimeScaleFactor="0.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='pikaday-visual-date' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='pikaday-visual-date' tag='INPUT' type='text' class='form-control' placeholder='mm/dd/yyyy' aaname='' /&gt;" Guid="df07eaf8-5099-4c13-a4e1-2d0cc0bc4d81" InformativeScreenshot="bf3198c690392f9726ff4bae91758fff.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ef3d84df-f332-42fc-9543-9cabec67827a" CvTextArea="1251, 368, 102, 12" CvTextArgument="Installation Date" CvType="Text" DesignTimeRectangle="1252, 366, 101, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Installation Date' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Installation Date' tag='LABEL' type='' class='font-weight-bolder mb-0' check:innerText='Installation Date' /&gt;" Guid="7c9e8d9f-2d3e-439b-bc8e-e9a8f57a796e" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="20ef3592-a21b-4243-bc90-6fa722fcd4d8" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.warrantyyourway.com/equipment/" CVScreenId="ef3d84df-f332-42fc-9543-9cabec67827a" CvElementArea="1353, 429, 87, 33" CvTextArea="1384, 439, 23, 11" CvTextArgument="Add" CvType="Button" DesignTimeRectangle="1354, 430, 84, 30" DesignTimeScaleFactor="0.75" ElementType="Button" FullSelectorArgument="&lt;webctrl id='addSerialButton' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='addSerialButton' tag='BUTTON' type='submit' class='btn btn-secondary ml-auto mb-1' aaname='Add' check:innerText='Add' /&gt;" Guid="d264cd7f-7b60-49d7-98ce-af2a1cc8e236" InformativeScreenshot="cd7323b9a2b5c4cba6d46e402bf2ba23.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="10, 10, 2306, 1692" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVDhPYzjG48YKxHFAfBGIvwHxPyD+jwOD5EBqQGpBelhBBoAYb4AYmwZ8GKQnDmTAeSRBUvF5kAFf0QRJwV9BBmD3M7crBHPBsAuEBokh1P0DGYCm0PX/cX6P/yfF/f6fkgv5f0Y18v9ZzZj/Z7Vi/59Rj/5/WiH0/3Eh7/9HOYEGAvUygDSflAr4f043/v85/YT/lxxy/19xK/p/yS7n/zX/yv+XnfL/34xt/n8zpvn/7bQuILvl/+307v9XfcrAFjEc5XAGK7wZ1/L/UfOC//dKpv5/s/7Q/yd9K8H00/5V/x9Uzfp/N3/i/1dLd0NcoRj2/82Gw2DDwV64Vzzl/62ENqABC//fye77/6R7+f9n09b/f9yx9P/zWZv+3yuc/P9ewaT/T3pXAL0V/P+iZeb/V0t2/T9vlAw0gNcd4k+N6P9ntYH+VIn4f0o66P9pZSAtE/T/vEHS/8vOBUCv5YFdej245v+t+FagdxPBYQcJRHgAIoU0jOZzBwcaKFBPivv/PyHsjYglcCDiT7oIDNLAjSEOjkaKExLFSZnizERBdnZjBQCr5zChXiiH7QAAAABJRU5ErkJggg==" InformativeScreenshot="48a155735b8c5f1f20569ccdf6625d5b.jpg" Selector="&lt;html app='chrome.exe' title='Lennox Residential Product Warranty Registration | Lennox Warranty Your Way' /&gt;" Title="Lennox Residential Product Warranty Registration | Lennox Warranty Your Way" Url="https://www.warrantyyourway.com/equipment/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,329 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AddAttachments_ServiceTitan" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_RegistrationPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceNumber" Type="InArgument(x:String)" />
+    <x:Property Name="out_RegistrationUploaded" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1571,3636</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AddAttachments_ServiceTitan_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Attaches the Registration from WarrantyYourWay to the ServiceTitan Invoice page." DisplayName="AttachRegistration_ServiceTitan" sap:VirtualizedContainerService.HintSize="1216,3571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1154,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Starting AttachRegistration_ServiceTitan&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1154,3115" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1112,2908" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Calls - ServiceTitan" sap:VirtualizedContainerService.HintSize="1050,2820" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Version="V2" WindowResize="Restore">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2580" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="URLString" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToProjectPage_ServiceTitan - Invoke Workflow File (Application Layer\ServiceTitan\NavigateToProjectPage_ServiceTitan.xaml)" sap:VirtualizedContainerService.HintSize="954,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Application Layer\ServiceTitan\NavigateToProjectPage_ServiceTitan.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">[in_InvoiceNumber]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <uix:NGetText DisplayName="Get Text 'go.servicetitan.com/#/E…'" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" TextString="[URLString]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/EditInvoice/596018149" CVScreenId="fd8de977-8dd4-404b-9fba-c934cf7b5cce" CvElementArea="118, 45, 2014, 35" CvType="InputBox" DesignTimeRectangle="165, 51, 1883, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" Guid="0bc25d57-47ba-4a87-8b94-c555e1c2743d" InformativeScreenshot="622c83aa60ba491b8c113cc7f0797689.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice - ServiceTitan - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="85, 46, 34, 34" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Reload' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Reload' role='push button' automationid='' check:text='Reload' /&gt;" Guid="1c6aa5a5-e9f0-4688-983e-c08c6bd0be7a" SearchSteps="Selector, FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[URLString]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[URLString.Replace("EditInvoice","location")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'go.servicetitan.com/#/E…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,286" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="HardwareEvents" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Text="[URLString + &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/EditInvoice/596018149" CVScreenId="66cf7c75-9230-4fd4-9143-2e826420a7c3" CvElementArea="142, 48, 306, 30" CvType="InputBox" DesignTimeRectangle="165, 51, 1762, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" Guid="477af49a-e3a2-49d8-839d-a3147351060b" InformativeScreenshot="2db963ba802a8974371ddf71760cd194.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice - ServiceTitan - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="85, 46, 34, 34" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Reload' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Invoice - ServiceTitan - Google Chrome' role='pane' /&gt;&lt;ctrl name='Reload' role='push button' automationid='' check:text='Reload' /&gt;" Guid="6f7f1498-b5c9-48eb-82a0-1195f56aa016" SearchSteps="Selector, FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <Delay Duration="00:00:09" sap:VirtualizedContainerService.HintSize="954,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <uix:NCheckState DisplayName="Check App State 'Application error'" sap:VirtualizedContainerService.HintSize="954,557" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Timeout="5" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/596018149" CVScreenId="ad16b8f4-a06a-4eef-84c1-a23c0f5bdc19" CvElementArea="2223, 138, 24, 25" CvType="CloseButton" DesignTimeRectangle="2220, 135, 32, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='close toast' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='close toast' tag='BUTTON' type='button' class='Button Toast__close Button--grey Button--subtle Button--xsmall Button--icon-only' aaname='' /&gt;" Guid="6e5fe827-f265-495c-b81a-e97e269ac41c" InformativeScreenshot="1cb09777de709419c0523ece5afb816e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Location - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ad16b8f4-a06a-4eef-84c1-a23c0f5bdc19" CvTextArea="1883, 143, 157, 21" CvTextArgument="Application error" CvType="Text" DesignTimeRectangle="1885, 138, 302, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl class='Toast__title' parentid='servicetitan-notifications' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='Toast__title' parentid='servicetitan-notifications' tag='DIV' type='' aaname='Application error' check:innerText='Application error' /&gt;" Guid="ca59c53c-1a8f-42f9-84c8-cead601b7be3" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/596018149" CVScreenId="42248211-cb2f-4683-82fa-7a76241bddeb" CvTextArea="1883, 143, 157, 21" CvTextArgument="Application error" CvType="Text" DesignTimeRectangle="1885, 138, 302, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='Toast__title' parentid='servicetitan-notifications' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='Toast__title' parentid='servicetitan-notifications' tag='DIV' type='' aaname='Application error' check:innerText='Application error' /&gt;" Guid="5f176bb8-22f1-4acd-b39f-001df8051c9c" InformativeScreenshot="8c9e28ec0d4173dd9fd391cc612fff07.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Location - ServiceTitan' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="42248211-cb2f-4683-82fa-7a76241bddeb" CvElementArea="1836, 137, 32, 30" CvType="Icon" DesignTimeRectangle="1840, 140, 25, 25" ElementType="Icon" FullSelectorArgument="&lt;webctrl parentid='servicetitan-notifications' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='servicetitan-notifications' tag='svg' type='' class='' aaname='' /&gt;" Guid="0c52e80b-e197-4dd3-9b33-38286b009005" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH6SURBVEhL7ZPNK0RRGMb9DWKHssNGxAalFBv5WGCjlDDCio0QIpQlouxQ7Ag78rGQj7KRr7Cbj4vJTDPTxW2uMa95j3OnOe65d86dfGw89XTmvs+Z91d35kmCP9A/9EeVMFQ53KGfrCshaPDuEh6aykG9u6ITa7IMDb+p4BnsAHt+MniGOgFCIZqIyzJUOd4DZ0kGgeKpnOzTRFyWoOEXGdzttQSoGZ9xbkWWoPLGMtgLUxkoPj9vrtAbYhKGhtwS3NcXsUDq+4ZikotKGOqbHeMCNWMuKiGoensBzvKsKECqzgd3WxVIVXnRGeZqpEoiigslFem3RZejveM9oJwegHesm5ljlfB+PMWFKkc74ChKY5YHFqdJFliYYuakQke7JDOTKfRdDsCjrZpZjDaCot22mrgVMoXKa0v6ikRs9HqJI/exWmYyhJKK1PErwvsjxRqrZVYhQ6h/bpy7EO0szQSpMpecvBztn5ugm/TiQoPXZ+CqyOYuQz/1NpNXiCcvR7sqciB4c043stJBw2oQnvpauYs0+2ZG4U2yg296hJtr9gy0cyukg74ebOkq8tUPjWXgHe4iJy/X7ChOJ5X7KgZKKtJSyV2QqLFyuDdWDFReXQB7QQr3ywkbKxSpXqwY6PPWGvjnJ7/dL9vrlPAp3W/6G/qH/qAAPgB2RIfipdsM/wAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Attachment'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/596018149" DesignTimeRectangle="1745, 268, 221, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Add Attachment' parentid='app-base' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Add Attachment' parentid='app-base' tag='BUTTON' type='button' class='Button Button--blue Button--outline' check:innerText='Add Attachment' /&gt;" Guid="50d11bca-6ca4-478d-bbe1-dd388e2465ed" InformativeScreenshot="1e729fac1d0916dab3f612cec28c83a7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Location - ServiceTitan' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="d3c2d1c2-6119-445b-b24a-ad27c8f46d29" CvTextArea="2034, 283, 146, 21" CvTextArgument="Add Equipment" CvType="Text" DesignTimeRectangle="1986, 268, 212, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' class='Button Button--blue Button--outline' aaname='Add Equipment' check:innerText='Add Equipment' /&gt;" Guid="4769fe52-0364-4ecd-a318-99ec24b24162" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File &amp;name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Text="[in_RegistrationPath]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/1242521" CVScreenId="f868d3e3-61bc-42ff-a27d-7c0f0b0e459b" CvElementArea="196, 404, 381, 26" CvType="InputBox" DesignTimeRectangle="201, 410, 354, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="666ac7bf-6768-485f-a2f8-95add937ceac" InformativeScreenshot="143979ba0d9d48536d97ba8df911553d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="f868d3e3-61bc-42ff-a27d-7c0f0b0e459b" CvTextArea="137, 410, 55, 12" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="138, 409, 54, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' check:text='File &amp;amp;name:' /&gt;" Guid="fdec9c5b-ad96-4770-bd83-fb5225851e9e" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[out_RegistrationUploaded]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9d52ab7-9a13-45e3-a7da-9beac1e43a89" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://go.servicetitan.com/#/location/596018149" CVScreenId="1104f4d1-206f-4a54-a2bd-c4c82e2f8c6a" CvElementArea="587, 434, 89, 26" CvTextArea="615, 440, 30, 14" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="587, 434, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="34c518fd-eaab-4b87-a52b-f49b7e05136c" InformativeScreenshot="96a77611ccb42285a16bd3fef3c8be73.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="1104f4d1-206f-4a54-a2bd-c4c82e2f8c6a" CvElementArea="687, 434, 88, 26" CvTextArea="712, 440, 38, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="687, 434, 88, 26" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='Cancel' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Cancel' check:text='Cancel' /&gt;" Guid="38785b39-7ff2-41b4-94c2-fede512fc31d" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,168" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Certificate of Registration added to ServiceTitan.&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-7, 0, 2307, 1699" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPxSURBVFhHvZZbiJVVFMfHlEhHMcSewktKiCESeXnQDETNtCKwl6xpzEg9gyQzCoY3grw9RCHqg/rQBSOjG0oQ0U1LXyoxMiKth5QoREXIe5Ta77dZezhzzly+cxz6w4+z99prrb3P/vZe39dwM2outQ6BObAEtsPO4EWYB0PCtfdE0gGwGA7BDTgNX0Oe/DM4C479C7thbITfnEj0BDihbIDxMZREf0A0ba8CFyFbwlyfTAzvwlV4yX4MtQvbQrg32lPARTr5zuRQr0jg5G7xSUgTVAr7SDgb7RHwJzj5e8mhXi0otd5KEif/Fu4Mc5UYexkOR/sTcPIz0Jgc6hUJXoUTMDRMnYrxH+AwTIP83NfFcH0iwWy4BKPC1C5s7sxEmACT4Tr8Bq9DXsCScK9dBPvcj8PTYdI2FDbCMciTdMf2CK1dBLfB59G1Pxcugv90LyyD6eAOuBOzoHIB+td+/wkaBBaSe6LvRNfA5zwmOXUixlqhchGen9HhUkwErIAPot0Iv4PJuvw3jA2HNXAKfgWr33owrngRwtlnbwGZHf2lYJJryaFC2O+HT+ELcEIXYZk2T/mOpN3sUWVBfaJvDUhJkkOouWVZX2xb4GPwHLwGb8CDMB6eAm+QsfsirHvhmP99moxftz//A5mVHBHtzbA72svB0tsM34G+P8ev+IKqKt1Vwslrdi6C3Frvd04iH4Wrvj/C9GjfBhYgJ/K1vCnsj0N+H7ytrUfhOD8CPL3vRLucReG3FUxuXfCZe1aGpSQh+i4qP8LzYe5ZOG+KoIzv9IfB5/oXLAw/+x+CJdgX1WTt85e29aHdAt+D8QfAmjDD8ULCuQRXwAR/L2hp6xf2x8J2R3IM0XcXnoO7bWtrWtzqQf0KfJF5Ld9KzkVFwH3gnXbClWHW/iU8EN0k+k+Cn2RjYTVYF7bBN3AerJbmSbtUWATkb4HLMC1sPtvnk0OIvhN6JvpDhztP38PpotxVz9a4GComAlzEL+C9Tv+c3+FpsEzYrAlVr2Bs48DFuRvuguehww72KAJeiOBLTaX0bBub41xkYfNLyFK8PEztwnY7GG99eDbMxUXQ1Eggg2ERrInhdmG7C7wVP8FaeAY8oJbro1CsJFeKQA9k+QIsWhfgFehwI5pKbbdg2wHZ3+c+M4aLi6D+0bSdC1RaQNisDdnm1vrPj4DfDNnuuak6L4VEoC+ZPeAW+i2Qkw4MF33eL7N3hv9+UrjXLoLXlSWTDiWVvosrH++KbRFSuwj23ltkdsEjYU6ib6XrbMJKDkZI74mkj8J++Ccm6Y5ShPW+SG71ewj8QPkDKid/M1z/HzHhDPDryBuQvg26VkPDfz8CQZizRA+4AAAAAElFTkSuQmCC" InformativeScreenshot="793ef6148d1fb7984bfe678f8df0a0ba.jpg" Selector="&lt;html app='chrome.exe' title='Calls - ServiceTitan' /&gt;" Title="Calls - ServiceTitan" Url="https://go.servicetitan.com/#/Calls" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1154,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Finished SaveInvoice_ServiceTitan&quot;]" />
+  </Sequence>
+</Activity>
